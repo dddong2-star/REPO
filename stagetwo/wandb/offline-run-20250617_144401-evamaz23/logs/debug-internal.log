@@ -1,0 +1,15 @@
+{"time":"2025-06-17T14:44:01.8909713+08:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\offline-run-20250617_144401-evamaz23\\logs\\debug-core.log"}
+{"time":"2025-06-17T14:44:02.0397431+08:00","level":"WARN","msg":"GraphQL client is nil, skipping feature loading"}
+{"time":"2025-06-17T14:44:02.0397431+08:00","level":"INFO","msg":"stream: created new stream","id":"evamaz23"}
+{"time":"2025-06-17T14:44:02.0397431+08:00","level":"INFO","msg":"stream: started","id":"evamaz23"}
+{"time":"2025-06-17T14:44:02.0397431+08:00","level":"INFO","msg":"sender: started","stream_id":"evamaz23"}
+{"time":"2025-06-17T14:44:02.0397431+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"evamaz23"}
+{"time":"2025-06-17T14:44:02.0397431+08:00","level":"INFO","msg":"handler: started","stream_id":"evamaz23"}
+{"time":"2025-06-17T14:44:02.0445277+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T14:55:24.9721861+08:00","level":"INFO","msg":"stream: closing","id":"evamaz23"}
+{"time":"2025-06-17T14:55:24.9721861+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T14:55:24.9721861+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T14:55:24.9721861+08:00","level":"INFO","msg":"handler: closed","stream_id":"evamaz23"}
+{"time":"2025-06-17T14:55:24.9721861+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"evamaz23"}
+{"time":"2025-06-17T14:55:24.9721861+08:00","level":"INFO","msg":"sender: closed","stream_id":"evamaz23"}
+{"time":"2025-06-17T14:55:24.9726888+08:00","level":"INFO","msg":"stream: closed","id":"evamaz23"}

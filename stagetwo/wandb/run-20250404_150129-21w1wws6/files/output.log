@@ -1,0 +1,93 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   1%|          | 1/100 [01:13<2:00:38, 73.12s/it, episode=0]
+==================action:0=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:88.44
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.82
+reward_step:2|precision: 0.27| recall: 0.44 | f1: 0.33 | similarity: 0.91|reward_score:60.75
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:19.36
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:107.26
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.91|reward_score:67.33
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:27.36
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.98
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.97
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.80|reward_score:24.13
+tensor([56.5990]) {'mean_p': 0.2512820512820513, 'mean_r': 0.4188034188034188, 'mean_f1': 0.3128205128205129, 'mean_similary': 0.8438991158207257, 'mean_reward': 56.59902475667305}
+==================action:0=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.68|reward_score:77.50
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:2|precision: 0.17| recall: 0.22 | f1: 0.19 | similarity: 0.89|reward_score:45.77
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.85|reward_score:125.43
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:108.00
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:26.74
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.52|reward_score:49.05
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:27.30
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.12
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.90
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.85|reward_score:25.59
+tensor([57.6610]) {'mean_p': 0.23717948717948717, 'mean_r': 0.594017094017094, 'mean_f1': 0.3252747252747253, 'mean_similary': 0.837785653624779, 'mean_reward': 57.6610421362159}
+==================action:3=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.64|reward_score:85.88
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.82
+reward_step:2|precision: 0.18| recall: 0.22 | f1: 0.20 | similarity: 0.87|reward_score:46.08
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.92|reward_score:127.53
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.91|reward_score:67.22
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:27.44
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.43
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:66.02
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.90
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.92|reward_score:27.74
+tensor([65.9865]) {'mean_p': 0.29731934731934734, 'mean_r': 0.7094017094017093, 'mean_f1': 0.4, 'mean_similary': 0.8662156088907262, 'mean_reward': 65.98646826672179}
+==================action:7=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:88.44
+reward_step:1|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.87|reward_score:59.35
+reward_step:2|precision: 0.11| recall: 0.22 | f1: 0.15 | similarity: 0.90|reward_score:41.94
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.86|reward_score:68.77
+reward_step:4|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.89|reward_score:83.97
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:76.24
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.97
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:26.92
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.25
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.92
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.97|reward_score:29.08
+tensor([60.7464]) {'mean_p': 0.26860618014464166, 'mean_r': 0.6709401709401709, 'mean_f1': 0.3472934472934473, 'mean_similary': 0.8672338655170544, 'mean_reward': 60.746360694856364}
+==================action:9=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。A公司提供P产品，应用于B公司的产品，则可以抽取出(A, "供应商", B)，(A, "生产", P)。
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.74|reward_score:79.40
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:2|precision: 0.44| recall: 0.44 | f1: 0.44 | similarity: 0.93|reward_score:72.45
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.86|reward_score:68.77
+reward_step:4|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.91|reward_score:84.44
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:88.51

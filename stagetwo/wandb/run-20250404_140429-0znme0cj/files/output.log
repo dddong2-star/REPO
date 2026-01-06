@@ -1,0 +1,60 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   0%|          | 0/100 [00:00<?, ?it/s]
+==================action:0=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司提供产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（提供/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司提供P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司提供P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供货B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+
+=======================================================
+预测结果保存成功
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:104.32
+预测结果保存成功
+reward_step:1|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:2|precision: 0.38| recall: 0.67 | f1: 0.48 | similarity: 0.95|reward_score:76.64
+预测结果保存成功
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:27.09
+预测结果保存成功
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:107.51
+预测结果保存成功
+reward_step:5|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.94|reward_score:78.32
+预测结果保存成功
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:8|precision: 1.00| recall: 0.50 | f1: 0.67 | similarity: 0.91|reward_score:94.03
+预测结果保存成功
+reward_step:9|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.78|reward_score:90.11
+预测结果保存成功
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.90
+预测结果保存成功
+reward_step:11|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+预测结果保存成功
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+tensor([53.5908]) {'mean_p': 0.3237179487179487, 'mean_r': 0.43589743589743585, 'mean_f1': 0.3523076923076923, 'mean_similary': 0.6120018623387201, 'mean_reward': 53.59082510093083}
+结束
+结束啦
+ok

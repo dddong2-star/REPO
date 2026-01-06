@@ -1,0 +1,15 @@
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_setup.py:_flush():81] Configure stats pid to 13796
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_setup.py:_flush():81] Loading settings from C:\Users\15650\.config\wandb\settings
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_setup.py:_flush():81] Loading settings from F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\wandb\settings
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_init.py:setup_run_log_directory():703] Logging user logs to F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\wandb\run-20250617_143322-kn9rfjsf\logs\debug.log
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\wandb\run-20250617_143322-kn9rfjsf\logs\debug-internal.log
+2025-06-17 14:33:22,236 INFO    MainThread:13796 [wandb_init.py:init():831] calling init triggers
+2025-06-17 14:33:22,237 INFO    MainThread:13796 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0001, 'batch_size': 8, 'gamma': 0.95, 'epsilon': 0.5, 'target_update': 10, 'replay_buffer_size': 100, '_wandb': {}}
+2025-06-17 14:33:22,237 INFO    MainThread:13796 [wandb_init.py:init():872] starting backend
+2025-06-17 14:33:22,497 INFO    MainThread:13796 [wandb_init.py:init():875] sending inform_init request
+2025-06-17 14:33:22,515 INFO    MainThread:13796 [wandb_init.py:init():883] backend started and connected
+2025-06-17 14:33:22,516 INFO    MainThread:13796 [wandb_init.py:init():956] updated telemetry
+2025-06-17 14:33:22,519 INFO    MainThread:13796 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout

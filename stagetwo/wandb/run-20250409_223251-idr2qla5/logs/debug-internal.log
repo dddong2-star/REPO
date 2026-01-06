@@ -1,0 +1,16 @@
+{"time":"2025-04-09T22:32:51.0477367+08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-04-09T22:32:51.0477367+08:00","level":"INFO","msg":"created symlink","path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250409_223251-idr2qla5\\logs\\debug-core.log"}
+{"time":"2025-04-09T22:32:51.1649734+08:00","level":"INFO","msg":"created new stream","id":"idr2qla5"}
+{"time":"2025-04-09T22:32:51.1649734+08:00","level":"INFO","msg":"stream: started","id":"idr2qla5"}
+{"time":"2025-04-09T22:32:51.1649734+08:00","level":"INFO","msg":"handler: started","stream_id":"idr2qla5"}
+{"time":"2025-04-09T22:32:51.1649734+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"idr2qla5"}
+{"time":"2025-04-09T22:32:51.1649734+08:00","level":"INFO","msg":"sender: started","stream_id":"idr2qla5"}
+{"time":"2025-04-09T22:32:51.715812+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-09T22:34:27.4314525+08:00","level":"INFO","msg":"stream: closing","id":"idr2qla5"}
+{"time":"2025-04-09T22:34:27.4314525+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-09T22:34:27.4319552+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-09T22:34:28.9503984+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-09T22:34:29.3536643+08:00","level":"INFO","msg":"sender: closed","stream_id":"idr2qla5"}
+{"time":"2025-04-09T22:34:29.3536643+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"idr2qla5"}
+{"time":"2025-04-09T22:34:29.3536643+08:00","level":"INFO","msg":"handler: closed","stream_id":"idr2qla5"}
+{"time":"2025-04-09T22:34:29.3536643+08:00","level":"INFO","msg":"stream: closed","id":"idr2qla5"}

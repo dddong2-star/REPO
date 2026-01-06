@@ -1,0 +1,15 @@
+{"time":"2025-06-17T15:17:19.7750184+08:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\offline-run-20250617_151719-runnidvb\\logs\\debug-core.log"}
+{"time":"2025-06-17T15:17:19.9286159+08:00","level":"WARN","msg":"GraphQL client is nil, skipping feature loading"}
+{"time":"2025-06-17T15:17:19.9286159+08:00","level":"INFO","msg":"stream: created new stream","id":"runnidvb"}
+{"time":"2025-06-17T15:17:19.9286159+08:00","level":"INFO","msg":"stream: started","id":"runnidvb"}
+{"time":"2025-06-17T15:17:19.9286159+08:00","level":"INFO","msg":"sender: started","stream_id":"runnidvb"}
+{"time":"2025-06-17T15:17:19.9286159+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"runnidvb"}
+{"time":"2025-06-17T15:17:19.9286159+08:00","level":"INFO","msg":"handler: started","stream_id":"runnidvb"}
+{"time":"2025-06-17T15:17:19.9420311+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T15:45:26.7749579+08:00","level":"INFO","msg":"stream: closing","id":"runnidvb"}
+{"time":"2025-06-17T15:45:26.7749579+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T15:45:26.7749579+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T15:45:26.7749579+08:00","level":"INFO","msg":"handler: closed","stream_id":"runnidvb"}
+{"time":"2025-06-17T15:45:26.7749579+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"runnidvb"}
+{"time":"2025-06-17T15:45:26.7749579+08:00","level":"INFO","msg":"sender: closed","stream_id":"runnidvb"}
+{"time":"2025-06-17T15:45:26.7754607+08:00","level":"INFO","msg":"stream: closed","id":"runnidvb"}

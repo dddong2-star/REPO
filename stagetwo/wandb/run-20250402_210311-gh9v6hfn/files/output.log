@@ -1,0 +1,288 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   0%|          | 0/100 [00:00<?, ?it/s]
+==================action:8=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。示例输入：裕太微：已开展多维度宣传和市场推广，提升国内知名度有投资者问裕太微(688515)，董秘你好，既然公司以太网物理层芯片的赛道在囯内稀缺重要性，公司是否在囯内加大力度宣传，谢谢裕太微在互动平台表示，尊敬的投资者，您好！非常感谢您的建议，公司作为国内稀缺的以太网物理层芯片供应商，深知国内市场的重要性和公司产品在其中的重要作用，已开展多维度的宣传和市场推广，在国内的知名度和影响力正在逐步提升。公司将继续努力确保公司在以太网物理层芯片领域的国内领先地位，并为国内外客户提供高质量的产品和服务。感谢您对公司的关注。 示例输出：（裕太微，“生产”，以太网物理层芯片）
+=======================================================
+预测结果保存成功
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.25
+预测结果保存成功
+reward_step:1|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:2|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:0.19
+预测结果保存成功
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.63|reward_score:0.19
+预测结果保存成功
+reward_step:4|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.74|reward_score:0.22
+预测结果保存成功
+reward_step:5|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.67|reward_score:0.20
+预测结果保存成功
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.75|reward_score:0.23
+预测结果保存成功
+reward_step:8|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.59|reward_score:0.64
+预测结果保存成功
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.28|reward_score:0.08
+预测结果保存成功
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.75|reward_score:0.22
+预测结果保存成功
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:0.20
+预测结果保存成功
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.66|reward_score:0.20
+预测结果保存成功
+reward_step:13|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.60|reward_score:0.18
+预测结果保存成功
+reward_step:14|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.74|reward_score:0.22
+预测结果保存成功
+reward_step:15|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:16|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:0.20
+预测结果保存成功
+reward_step:17|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.74|reward_score:0.22
+预测结果保存成功
+reward_step:18|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.70|reward_score:0.21
+预测结果保存成功
+reward_step:19|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+错误信息：Connection error.
+预测结果保存成功
+reward_step:20|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.13|reward_score:0.04
+预测结果保存成功
+reward_step:21|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.30|reward_score:0.09
+预测结果保存成功
+reward_step:22|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.74|reward_score:0.57
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_exceptions.py", line 10, in map_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 168, in start_tls
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 163, in start_tls
+    sock = ssl_context.wrap_socket(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 317, in handle_request
+    stream = stream.start_tls(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 152, in start_tls
+    with map_exceptions(exc_map):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 93, in train_agent
+    rewards_tensor, rewards_log = reward.compute_reward(text, gold_labels, new_prompt, True)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 92, in compute_reward
+    hypos = self.generator.yuce_generate(
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 44, in yuce_generate
+    generated_texts=chatGPT_extract(formatted_template)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 77, in chatGPT_extract
+    completion = client.chat.completions.create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 212, in _receive_event
+    data = self._network_stream.read(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1292, in recv
+    return self.read(buflen)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1165, in read
+    return self._sslobj.read(len)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_exceptions.py", line 10, in map_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 168, in start_tls
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 163, in start_tls
+    sock = ssl_context.wrap_socket(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 317, in handle_request
+    stream = stream.start_tls(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 152, in start_tls
+    with map_exceptions(exc_map):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 93, in train_agent
+    rewards_tensor, rewards_log = reward.compute_reward(text, gold_labels, new_prompt, True)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 92, in compute_reward
+    hypos = self.generator.yuce_generate(
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 44, in yuce_generate
+    generated_texts=chatGPT_extract(formatted_template)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 77, in chatGPT_extract
+    completion = client.chat.completions.create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 212, in _receive_event
+    data = self._network_stream.read(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1292, in recv
+    return self.read(buflen)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1165, in read
+    return self._sslobj.read(len)
+KeyboardInterrupt

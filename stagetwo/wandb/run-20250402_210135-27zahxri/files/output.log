@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 34, in <module>
+    train_dataset, val_dataset, test_dataset = make_relation_extract_dataset(base_path, dataset)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stageone\data_loder\dataset.py", line 33, in make_relation_extract_dataset
+    load_relation_extract_dataset(dataset,
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stageone\data_loder\dataset.py", line 48, in load_relation_extract_dataset
+    assert dataset in ['triple_138', 'quintuple']
+AssertionError
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 34, in <module>
+    train_dataset, val_dataset, test_dataset = make_relation_extract_dataset(base_path, dataset)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stageone\data_loder\dataset.py", line 33, in make_relation_extract_dataset
+    load_relation_extract_dataset(dataset,
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stageone\data_loder\dataset.py", line 48, in load_relation_extract_dataset
+    assert dataset in ['triple_138', 'quintuple']
+AssertionError

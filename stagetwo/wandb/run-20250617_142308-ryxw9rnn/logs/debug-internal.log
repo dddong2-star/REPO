@@ -1,0 +1,21 @@
+{"time":"2025-06-17T14:23:08.7121047+08:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250617_142308-ryxw9rnn\\logs\\debug-core.log"}
+{"time":"2025-06-17T14:23:29.96724+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-06-17T14:23:53.5208234+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-06-17T14:24:18.9732199+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-06-17T14:24:49.9484937+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-06-17T14:25:29.8049928+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-06-17T14:26:07.7561754+08:00","level":"ERROR","msg":"Failed to load features, feature will default to disabled","error":"api: failed sending: POST https://api.wandb.ai/graphql giving up after 6 attempt(s): Post \"https://api.wandb.ai/graphql\": tls: failed to verify certificate: x509: certificate signed by unknown authority"}
+{"time":"2025-06-17T14:26:07.7561754+08:00","level":"INFO","msg":"stream: created new stream","id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.7561754+08:00","level":"INFO","msg":"stream: started","id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.7566774+08:00","level":"INFO","msg":"sender: started","stream_id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.7566774+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.7566774+08:00","level":"INFO","msg":"handler: started","stream_id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.7577129+08:00","level":"INFO","msg":"stream: closing","id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.7937987+08:00","level":"ERROR","msg":"runupserter: failed to init run","error":"api: failed sending: POST https://api.wandb.ai/graphql giving up after 1 attempt(s): Post \"https://api.wandb.ai/graphql\": tls: failed to verify certificate: x509: certificate signed by unknown authority"}
+{"time":"2025-06-17T14:26:07.7943859+08:00","level":"ERROR","msg":"sender: uploadConfigFile: stream: no run"}
+{"time":"2025-06-17T14:26:07.8583309+08:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: api: failed sending: POST https://api.wandb.ai/graphql giving up after 1 attempt(s): Post \"https://api.wandb.ai/graphql\": tls: failed to verify certificate: x509: certificate signed by unknown authority"}
+{"time":"2025-06-17T14:26:07.858915+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T14:26:07.858915+08:00","level":"INFO","msg":"handler: closed","stream_id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.858915+08:00","level":"INFO","msg":"sender: closed","stream_id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.858915+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ryxw9rnn"}
+{"time":"2025-06-17T14:26:07.8594293+08:00","level":"INFO","msg":"stream: closed","id":"ryxw9rnn"}

@@ -1,0 +1,38 @@
+{
+  "os":  "Windows-10-10.0.26100-SP0",
+  "python":  "CPython 3.10.16",
+  "startedAt":  "2025-06-17T06:44:01.760518Z",
+  "program":  "F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\main.py",
+  "codePath":  "..\\main.py",
+  "root":  "F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo",
+  "host":  "czb",
+  "executable":  "F:\\ENV\\anaconda\\envs\\rl-prompt-main\\python.exe",
+  "codePathLocal":  "..\\main.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 3060",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "107373129728",
+      "used":  "98537684992"
+    }
+  },
+  "memory":  {
+    "total":  "34216517632"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  16
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3060",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  3584,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-28b19837-5a88-e056-6643-43fe93a403a5"
+    }
+  ],
+  "cudaVersion":  "12.7"
+}

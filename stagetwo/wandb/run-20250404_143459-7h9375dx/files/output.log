@@ -1,0 +1,246 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   1%|          | 1/100 [01:33<2:34:42, 93.76s/it, episode=0]
+==================action:7=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.81|reward_score:90.82
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.82
+reward_step:2|precision: 0.33| recall: 0.33 | f1: 0.33 | similarity: 0.58|reward_score:50.81
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:19.36
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.79|reward_score:103.76
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:66.62
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:26.61
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:128.00
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.94
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:25.03
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.77|reward_score:23.15
+tensor([62.2994]) {'mean_p': 0.32051282051282054, 'mean_r': 0.4871794871794872, 'mean_f1': 0.3794871794871795, 'mean_similary': 0.8116907125545871, 'mean_reward': 62.29943932535556}
+==================action:10=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。 请以三元组形式输出：(实体1, 关系, 实体2)。
+=======================================================
+reward_step:0|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.56|reward_score:56.94
+reward_step:1|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.89|reward_score:83.90
+reward_step:2|precision: 0.17| recall: 0.22 | f1: 0.19 | similarity: 0.93|reward_score:46.98
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:148.19
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:26.57
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.41
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.15
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.78|reward_score:23.40
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.78|reward_score:23.37
+tensor([56.7962]) {'mean_p': 0.22307692307692306, 'mean_r': 0.594017094017094, 'mean_f1': 0.315018315018315, 'mean_similary': 0.8431468472916346, 'mean_reward': 56.79623692058054}
+==================action:1=============================
+
+
+以下是改写后的句式，保持语义不变：
+
+1. 从文本中识别并提取涉及生产、供应、合作等方面的关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等角色，并标明关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确认关系的方向，明确主客体的区分，并以三元组形式输出：(实体1, 关系, 实体2)。
+
+2. 从文本中挖掘并提取涉及生产、供应、合作等的相关关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为其标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请根据关系的方向，明确主客体，并以三元组格式输出：(实体1, 关系, 实体2)。
+
+3. 请从文本中提取出涉及生产、供应、合作等多种关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注每种关系的类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意确定关系的方向，并准确区分主客体，最终以三元组格式输出：(实体1, 关系, 实体2)。
+
+4. 在文本中提取生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，标注出对应的关系类型（例如“生产”、“供应商”、“合作”）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请明确关系方向，并清晰划分主客体，以三元组形式输出：(实体1, 关系, 实体2)。
+
+5. 请从文本中提取并识别涉及生产、供应、合作等类型的关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为每种关系类型打上标签（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确认关系的方向，准确识别主客体，并输出三元组形式：(实体1, 关系, 实体2)。
+=======================================================
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.77|reward_score:23.23
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.82
+reward_step:2|precision: 0.12| recall: 0.22 | f1: 0.16 | similarity: 0.73|reward_score:37.75
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.86|reward_score:25.71
+reward_step:4|precision: 0.22| recall: 1.00 | f1: 0.36 | similarity: 0.91|reward_score:63.65
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.49|reward_score:14.66
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:26.57
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:26.99
+reward_step:10|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.86|reward_score:59.13
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.78|reward_score:23.40
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.85|reward_score:25.54
+tensor([45.4837]) {'mean_p': 0.15747863247863247, 'mean_r': 0.36324786324786323, 'mean_f1': 0.2095104895104895, 'mean_similary': 0.8177555613487194, 'mean_reward': 45.483715791510534}
+==================action:3=============================
+
+
+以下是改写后的句式，保持语义不变：
+
+1. 从文本中识别并提取涉及生产、供应、合作等方面的关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等角色，并标明关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确认关系的方向，明确主客体的区分，并以三元组形式输出：(实体1, 关系, 实体2)。
+
+2. 从文本中挖掘并提取涉及生产、供应、合作等的相关关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为其标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请根据关系的方向，明确主客体，并以三元组格式输出：(实体1, 关系, 实体2)。
+
+3. 请从文本中提取出涉及生产、供应、合作等多种关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注每种关系的类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意确定关系的方向，并准确区分主客体，最终以三元组格式输出：(实体1, 关系, 实体2)。
+
+4. 在文本中提取生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，标注出对应的关系类型（例如“生产”、“供应商”、“合作”）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请明确关系方向，并清晰划分主客体，以三元组形式输出：(实体1, 关系, 实体2)。
+
+5. 请从文本中提取并识别涉及生产、供应、合作等类型的关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为每种关系类型打上标签（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确认关系的方向，准确识别主客体，并输出三元组形式：(实体1, 关系, 实体2)。
+=======================================================
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.49|reward_score:14.75
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.91
+reward_step:2|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:26.15
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:148.19
+reward_step:4|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.85|reward_score:75.52
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.86|reward_score:25.84
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:26.20
+reward_step:8|precision: 0.17| recall: 0.50 | f1: 0.25 | similarity: 0.50|reward_score:40.02
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.43
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.17
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.72|reward_score:21.54
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.64|reward_score:19.23
+tensor([50.0637]) {'mean_p': 0.18589743589743588, 'mean_r': 0.5, 'mean_f1': 0.26282051282051283, 'mean_similary': 0.7927216946647577, 'mean_reward': 50.06370212199401}
+==================action:6=============================
+
+
+以下是改写后的句式，保持语义不变：
+
+1. 从文本中识别并提取涉及生产、供应、合作等方面的关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等角色，并标明关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确认关系的方向，明确主客体的区分，并以三元组形式输出：(实体1, 关系, 实体2)。
+
+2. 从文本中挖掘并提取涉及生产、供应、合作等的相关关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为其标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请根据关系的方向，明确主客体，并以三元组格式输出：(实体1, 关系, 实体2)。
+
+3. 请从文本中提取出涉及生产、供应、合作等多种关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注每种关系的类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意确定关系的方向，并准确区分主客体，最终以三元组格式输出：(实体1, 关系, 实体2)。
+
+4. 在文本中提取生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，标注出对应的关系类型（例如“生产”、“供应商”、“合作”）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请明确关系方向，并清晰划分主客体，以三元组形式输出：(实体1, 关系, 实体2)。
+
+5. 请从文本中提取并识别涉及生产、供应、合作等类型的关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为每种关系类型打上标签（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确认关系的方向，准确识别主客体，并输出三元组形式：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.64|reward_score:19.27
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:94.00
+reward_step:2|precision: 0.30| recall: 0.33 | f1: 0.32 | similarity: 0.89|reward_score:58.27
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.89|reward_score:69.45
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.83|reward_score:91.51
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:26.58
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.60| recall: 1.00 | f1: 0.75 | similarity: 0.77|reward_score:98.23
+reward_step:10|precision: 0.14| recall: 1.00 | f1: 0.25 | similarity: 0.52|reward_score:40.73
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.17
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:27.10
+tensor([54.3968]) {'mean_p': 0.23899690053536207, 'mean_r': 0.6794871794871794, 'mean_f1': 0.31879699248120297, 'mean_similary': 0.7505698849069766, 'mean_reward': 54.39679579532959}
+==================action:1=============================
+
+
+1. 请从文本中提取涉及生产、供应、合作等的关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注出关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请明确关系的方向，区分主客体，并输出三元组格式：(实体1, 关系, 实体2)。
+
+2. 从文本中抽取涉及生产、供应、合作等方面的关系，识别公司与其产品、服务或设备的相关生产商、供应商、合作伙伴等角色，标明每个关系的类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保明确关系方向，并正确区分主客体，以三元组形式输出：(实体1, 关系, 实体2)。
+
+3. 请从文本中提炼出涉及生产、供应、合作等的关系，找出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并为每种关系标注类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保识别关系的方向，清晰区分主客体，并以三元组形式输出：(实体1, 关系, 实体2)。
+
+4. 从文本中抽取生产、供应、合作等相关的关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等角色，并标注出每个关系的类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意区分关系的方向，准确区分主客体，并以三元组格式输出：(实体1, 关系, 实体2)。
+
+5. 请从文本中提取涉及生产、供应、合作等类型的相关关系，标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等角色，并为关系打上相应标签（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保关系方向清晰，主客体区分明确，并输出三元组格式：(实体1, 关系, 实体2)。
+=======================================================
+reward_step:0|precision: 0.29| recall: 1.00 | f1: 0.44 | similarity: 0.67|reward_score:64.67
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.91
+reward_step:2|precision: 0.42| recall: 0.56 | f1: 0.48 | similarity: 0.91|reward_score:75.05
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:148.19
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:27.26
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:128.00
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.18
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.75|reward_score:22.45
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.82|reward_score:24.54
+tensor([69.2735]) {'mean_p': 0.3424908424908425, 'mean_r': 0.6965811965811965, 'mean_f1': 0.43492063492063493, 'mean_similary': 0.8593798147414848, 'mean_reward': 69.27345793430803}
+=======评估=========
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.09| evluate_recall: 1.00 | evluate_f1: 0.17 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.20| evluate_recall: 0.50 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.25| evluate_recall: 0.50 | evluate_f1: 0.33 |
+evluate_precision: 0.33| evluate_recall: 0.67 | evluate_f1: 0.44 |
+evluate_precision: 0.40| evluate_recall: 0.67 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.33029100529100525
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7_5.pth
+错误信息：Request timed out.
+evluate_precision: 0.25| evluate_recall: 0.33 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.25| evluate_recall: 0.20 | evluate_f1: 0.22 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+avg_f1:0.04232804232804233
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.20 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.1349206349206349
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+avg_f1:0.027777777777777776
+======评估结果=======
+Epoch 5: F1=0.3303
+Best p:0.30063131313131314
+Best r:0.45833333333333326
+Best Prompt: 从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。A公司提供P产品，应用于B公司的产品，则可以抽取出(A, "供应商", B)，(A, "生产", P)。
+Best action:[9]
+BEST_GLOBAL_F1:从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。A公司提供P产品，应用于B公司的产品，则可以抽取出(A, "供应商", B)，(A, "生产", P)。
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 170, in train_agent
+    torch.save(q_network.state_dict(), model_save_path.join("best_model.pth"))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\torch\serialization.py", line 849, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\torch\serialization.py", line 716, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\torch\serialization.py", line 687, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+RuntimeError: Parent directory b2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7e2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7s2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7t2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7_2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7m2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7o2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7d2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7e2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7l2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7.2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7p2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7t2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0 does not exist.
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 170, in train_agent
+    torch.save(q_network.state_dict(), model_save_path.join("best_model.pth"))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\torch\serialization.py", line 849, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\torch\serialization.py", line 716, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\torch\serialization.py", line 687, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+RuntimeError: Parent directory b2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7e2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7s2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7t2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7_2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7m2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7o2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7d2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7e2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7l2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7.2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7p2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0\models7t2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models3\models5\models-\models0 does not exist.

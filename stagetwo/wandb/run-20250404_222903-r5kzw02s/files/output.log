@@ -1,0 +1,727 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   5%|▌         | 1/20 [01:15<23:48, 75.16s/it, episode=0]
+==================action:3=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:4.24
+reward_step:2|precision: 0.36| recall: 0.44 | f1: 0.40 | similarity: 0.93|reward_score:2.93
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.66|reward_score:0.66
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:4.24
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.89
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.82|reward_score:0.82
+tensor([2.5740]) {'mean_p': 0.2843822843822844, 'mean_r': 0.4572649572649573, 'mean_f1': 0.3435897435897436, 'mean_similary': 0.8560896053868574, 'mean_reward': 2.574038323335576}
+==================action:4=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。‌公司是经济实体。公司名称通常包括有限责任公司或者股份有限公司。在新闻中可能也会使用股票名称指代公司。比如：小米公司，小米科技有限责任公司等。产品是指被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.81|reward_score:4.15
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.33| recall: 0.44 | f1: 0.38 | similarity: 0.93|reward_score:2.84
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.10|reward_score:0.10
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:4.91
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:4.24
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.64|reward_score:0.64
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.73|reward_score:0.73
+tensor([2.7968]) {'mean_p': 0.34615384615384615, 'mean_r': 0.49572649572649574, 'mean_f1': 0.4010989010989011, 'mean_similary': 0.7912734881654764, 'mean_reward': 2.796767993659982}
+==================action:5=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。‌公司是经济实体。公司名称通常包括有限责任公司或者股份有限公司。在新闻中可能也会使用股票名称指代公司。比如：小米公司，小米科技有限责任公司等。产品是指被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。。 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.78|reward_score:3.64
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.29| recall: 0.44 | f1: 0.35 | similarity: 0.91|reward_score:2.65
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.70|reward_score:2.37
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.17| recall: 1.00 | f1: 0.29 | similarity: 0.86|reward_score:2.29
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.75|reward_score:0.75
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.74|reward_score:0.74
+tensor([3.3584]) {'mean_p': 0.3989010989010989, 'mean_r': 0.8034188034188035, 'mean_f1': 0.500382226469183, 'mean_similary': 0.8564421365942274, 'mean_reward': 3.3583532689401427}
+==================action:1=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能包含“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中包含“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.58|reward_score:4.58
+reward_step:2|precision: 0.42| recall: 0.56 | f1: 0.48 | similarity: 0.94|reward_score:3.32
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.67| recall: 0.67 | f1: 0.67 | similarity: 0.91|reward_score:4.25
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.79|reward_score:0.79
+tensor([3.1796]) {'mean_p': 0.37179487179487175, 'mean_r': 0.7094017094017093, 'mean_f1': 0.4673992673992675, 'mean_similary': 0.8425992403911727, 'mean_reward': 3.1795955773875098}
+==================action:6=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能包含“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中包含“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.64|reward_score:3.98
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.20| recall: 0.22 | f1: 0.21 | similarity: 0.50|reward_score:1.56
+reward_step:3|precision: 0.21| recall: 3.00 | f1: 0.40 | similarity: 0.86|reward_score:2.86
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.57|reward_score:4.57
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:3.39
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.70|reward_score:0.70
+tensor([3.3900]) {'mean_p': 0.4293040293040292, 'mean_r': 0.8632478632478632, 'mean_f1': 0.5187584345479082, 'mean_similary': 0.7962462318027266, 'mean_reward': 3.390038404542268}
+==================action:5=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能包含“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中包含“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.77|reward_score:3.27
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.25| recall: 0.22 | f1: 0.24 | similarity: 0.88|reward_score:2.06
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:9|precision: 0.17| recall: 0.33 | f1: 0.22 | similarity: 0.90|reward_score:2.01
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.12|reward_score:0.12
+tensor([2.8434]) {'mean_p': 0.3333333333333333, 'mean_r': 0.6581196581196581, 'mean_f1': 0.41724484665661143, 'mean_similary': 0.7571576882249269, 'mean_reward': 2.843381921507984}
+=======评估=========
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 1.00| evluate_recall: 0.50 | evluate_f1: 0.67 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 0.25| evluate_recall: 0.50 | evluate_f1: 0.33 |
+evluate_precision: 0.25| evluate_recall: 0.50 | evluate_f1: 0.33 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.40| evluate_recall: 0.67 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.67| evluate_recall: 0.67 | evluate_f1: 0.67 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.34722222222222215
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_5.pth
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 0.50 | evluate_f1: 0.67 |
+evluate_precision: 0.20| evluate_recall: 1.00 | evluate_f1: 0.33 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 0.33| evluate_recall: 0.50 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.67| evluate_recall: 1.00 | evluate_f1: 0.80 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.44999999999999996
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_5.pth
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 0.67| evluate_recall: 1.00 | evluate_f1: 0.80 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.3583333333333334
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 0.67| evluate_recall: 1.00 | evluate_f1: 0.80 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.33| evluate_recall: 0.50 | evluate_f1: 0.40 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 1.00| evluate_recall: 0.60 | evluate_f1: 0.75 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.5263888888888889
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_5.pth
+======评估结果=======
+Epoch 5: F1=0.5264
+Best p:0.5333333333333333
+Best r:0.6333333333333332
+Best Prompt: 从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。示例输入：航天信息：暂无深度参与鸿蒙系统适配工作有投资者问航天信息(600271)，请问航天信息有鸿蒙系统适配合作吗? 谢谢航天信息在互动平台表示，您好，公司作为大型信息化建设项目解决方案提供方以及项目集成建设实施方，可以按照业主要求，完成包括华为等公司在内的上下游合作伙伴的产品适配类的集成工作，但暂无深度参与鸿蒙系统适配工作。感谢您对公司的关注。 示例输出：（航天信息，“供应商”，华为），（航天信息，“生产”，产品适配类的集成工作）示例输入：亿纬锂能：与德方纳米合资建设的年产11万吨磷酸铁锂项目已满产有投资者问，磷酸铁锂电池现在市占率达到70%，是以后发展趋势，为保障今后供应，磷酸铁锂正极材料作为重要原材料，请问贵司是否已经自建磷酸铁锂正极材料生产线，产能多少万吨，2024年上半年产量达到多少？今后如何规划？亿纬锂能在互动平台表示，尊敬的投资者，您好！截止2024年第三季度，公司与德方纳米在云南曲靖合资建设的年产11万吨磷酸铁锂项目已满产且全部产能供应公司。未来，公司将继续深化产业链合资公司融合协同，不断升级供应链合资公司的成本优势和协同效应，保持公司产品市场竞争力。谢谢您的关注！ 示例输出：（亿纬锂能，“生产”，磷酸铁锂正极材料），（云南曲靖，“生产”，磷酸铁锂）示例输入：光大同创：碳纤维产品应用于笔记本电脑外壳并实现量产交付有投资者问，公司最近的优势产品有哪些光大同创在互动平台表示，谢谢投资者的关注。随着全球去塑化的趋势，公司将环保理念融入研发、生产各个环节，不断探索防护性产品的环保替代方案。公司注重技术研发的针对性和实用性，持续投入研发在碳纤维产品的应用，实现了碳纤维产品应用领域的拓展，目前公司碳纤维产品主要应用于笔记本电脑外壳，且已逐步在折叠屏手机领域实现量产交付。此外公司依托优秀的产品服务质量以及完善的国内区域布局，改进模切产品的生产工艺，从而提升模切产品的市场竞争力。未来公司将继续巩固优势，积极把握市场机会。谢谢您的关注。 示例输出：（光大同创，“生产”，碳纤维产品），（碳纤维产品，“构成”，笔记本电脑外壳）示例输入：剑桥科技：不便披露与华为合作的光模块具体型号及合作领域细节有投资者问剑桥科技(603083)，董秘您好！剑桥科技目前主要供应华为光模块领域，是那些型号产品？与华为合作还有其他相关领域吗？谢谢！剑桥科技在互动平台表示，尊敬的投资者，您好！关于公司与客户在光模块具体型号产品以及其他合作领域的详细信息，涉及到公司商业合作的细节内容，恕不便对外披露。若相关事项达到信息披露标准，公司将依据法律法规及时履行信息披露义务。感谢您对公司的关注。 示例输出：（剑桥科技，“生产”，光模块），（剑桥科技，“供应商”，华为）
+Best action:[8, 8, 8, 8]
+BEST_GLOBAL_F1:从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。示例输入：航天信息：暂无深度参与鸿蒙系统适配工作有投资者问航天信息(600271)，请问航天信息有鸿蒙系统适配合作吗? 谢谢航天信息在互动平台表示，您好，公司作为大型信息化建设项目解决方案提供方以及项目集成建设实施方，可以按照业主要求，完成包括华为等公司在内的上下游合作伙伴的产品适配类的集成工作，但暂无深度参与鸿蒙系统适配工作。感谢您对公司的关注。 示例输出：（航天信息，“供应商”，华为），（航天信息，“生产”，产品适配类的集成工作）示例输入：亿纬锂能：与德方纳米合资建设的年产11万吨磷酸铁锂项目已满产有投资者问，磷酸铁锂电池现在市占率达到70%，是以后发展趋势，为保障今后供应，磷酸铁锂正极材料作为重要原材料，请问贵司是否已经自建磷酸铁锂正极材料生产线，产能多少万吨，2024年上半年产量达到多少？今后如何规划？亿纬锂能在互动平台表示，尊敬的投资者，您好！截止2024年第三季度，公司与德方纳米在云南曲靖合资建设的年产11万吨磷酸铁锂项目已满产且全部产能供应公司。未来，公司将继续深化产业链合资公司融合协同，不断升级供应链合资公司的成本优势和协同效应，保持公司产品市场竞争力。谢谢您的关注！ 示例输出：（亿纬锂能，“生产”，磷酸铁锂正极材料），（云南曲靖，“生产”，磷酸铁锂）示例输入：光大同创：碳纤维产品应用于笔记本电脑外壳并实现量产交付有投资者问，公司最近的优势产品有哪些光大同创在互动平台表示，谢谢投资者的关注。随着全球去塑化的趋势，公司将环保理念融入研发、生产各个环节，不断探索防护性产品的环保替代方案。公司注重技术研发的针对性和实用性，持续投入研发在碳纤维产品的应用，实现了碳纤维产品应用领域的拓展，目前公司碳纤维产品主要应用于笔记本电脑外壳，且已逐步在折叠屏手机领域实现量产交付。此外公司依托优秀的产品服务质量以及完善的国内区域布局，改进模切产品的生产工艺，从而提升模切产品的市场竞争力。未来公司将继续巩固优势，积极把握市场机会。谢谢您的关注。 示例输出：（光大同创，“生产”，碳纤维产品），（碳纤维产品，“构成”，笔记本电脑外壳）示例输入：剑桥科技：不便披露与华为合作的光模块具体型号及合作领域细节有投资者问剑桥科技(603083)，董秘您好！剑桥科技目前主要供应华为光模块领域，是那些型号产品？与华为合作还有其他相关领域吗？谢谢！剑桥科技在互动平台表示，尊敬的投资者，您好！关于公司与客户在光模块具体型号产品以及其他合作领域的详细信息，涉及到公司商业合作的细节内容，恕不便对外披露。若相关事项达到信息披露标准，公司将依据法律法规及时履行信息披露义务。感谢您对公司的关注。 示例输出：（剑桥科技，“生产”，光模块），（剑桥科技，“供应商”，华为）
+==================action:2=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.20| recall: 0.22 | f1: 0.21 | similarity: 0.92|reward_score:1.98
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:4.24
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.56|reward_score:3.06
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.33| recall: 0.33 | f1: 0.33 | similarity: 0.93|reward_score:2.60
+reward_step:10|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([3.2559]) {'mean_p': 0.4256410256410256, 'mean_r': 0.6196581196581197, 'mean_f1': 0.49568151147098516, 'mean_similary': 0.7775002157153227, 'mean_reward': 3.2559077730702484}
+==================action:9=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。
+=======================================================
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.81|reward_score:0.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 1.00| recall: 0.22 | f1: 0.36 | similarity: 0.94|reward_score:2.76
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.78|reward_score:5.78
+reward_step:4|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:4.91
+reward_step:7|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.72|reward_score:2.38
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:2.87
+reward_step:11|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.94|reward_score:5.23
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([4.1875]) {'mean_p': 0.6294871794871795, 'mean_r': 0.9017094017094016, 'mean_f1': 0.658008658008658, 'mean_similary': 0.8975050571255194, 'mean_reward': 4.18754834716881}
+==================action:6=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.73|reward_score:0.73
+reward_step:1|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.13|reward_score:0.13
+reward_step:2|precision: 0.27| recall: 0.33 | f1: 0.30 | similarity: 0.94|reward_score:2.44
+reward_step:3|precision: 0.09| recall: 3.00 | f1: 0.18 | similarity: 0.87|reward_score:1.78
+reward_step:4|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.12|reward_score:0.12
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:2.87
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([2.7375]) {'mean_p': 0.3679341491841492, 'mean_r': 0.717948717948718, 'mean_f1': 0.4114219114219114, 'mean_similary': 0.6804288354956289, 'mean_reward': 2.7375383926051864}
+==================action:5=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.76|reward_score:3.62
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.31| recall: 0.44 | f1: 0.36 | similarity: 0.90|reward_score:2.72
+reward_step:3|precision: 0.43| recall: 3.00 | f1: 0.75 | similarity: 0.91|reward_score:4.66
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.93|reward_score:4.26
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.79|reward_score:2.45
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.78|reward_score:0.78
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.97|reward_score:0.97
+tensor([3.0152]) {'mean_p': 0.3374049027895181, 'mean_r': 0.7264957264957265, 'mean_f1': 0.427056277056277, 'mean_similary': 0.8799231933602643, 'mean_reward': 3.01520457864165}
+==================action:9=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.25| recall: 0.22 | f1: 0.24 | similarity: 0.94|reward_score:2.12
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.79|reward_score:4.79
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.88|reward_score:3.38
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.5890]) {'mean_p': 0.4487179487179486, 'mean_r': 0.8247863247863247, 'mean_f1': 0.5539969834087481, 'mean_similary': 0.8189788778699362, 'mean_reward': 3.5889637949136763}
+==================action:9=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.69|reward_score:4.69
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.25| recall: 0.22 | f1: 0.24 | similarity: 0.93|reward_score:2.10
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.92|reward_score:5.92
+reward_step:4|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.94|reward_score:3.79
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:4.91
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.21|reward_score:0.21
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.54|reward_score:2.54
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.86|reward_score:2.53
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.78|reward_score:0.78
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([3.7164]) {'mean_p': 0.48333333333333334, 'mean_r': 0.9017094017094016, 'mean_f1': 0.5851325145442793, 'mean_similary': 0.7907117717006268, 'mean_reward': 3.7163743444220225}
+==================action:10=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.82|reward_score:3.68
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.42| recall: 0.56 | f1: 0.48 | similarity: 0.89|reward_score:3.27
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.87|reward_score:3.01
+reward_step:4|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.92|reward_score:3.78
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.86|reward_score:2.53
+reward_step:11|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.94|reward_score:5.23
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.4752]) {'mean_p': 0.42800788954635116, 'mean_r': 0.8888888888888888, 'mean_f1': 0.5157509157509158, 'mean_similary': 0.8964123243463816, 'mean_reward': 3.47516690310096}
+==================action:3=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.81|reward_score:4.15
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:4.24
+reward_step:2|precision: 0.40| recall: 0.44 | f1: 0.42 | similarity: 0.90|reward_score:3.01
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.86|reward_score:3.01
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:4.91
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.88|reward_score:3.38
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.97|reward_score:0.97
+tensor([3.3289]) {'mean_p': 0.3946745562130177, 'mean_r': 0.8418803418803419, 'mean_f1': 0.48843262001156745, 'mean_similary': 0.886774991013167, 'mean_reward': 3.328938091071004}
+==================action:6=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.81|reward_score:3.66
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.50| recall: 0.44 | f1: 0.47 | similarity: 0.96|reward_score:3.31
+reward_step:3|precision: 0.43| recall: 3.00 | f1: 0.75 | similarity: 0.91|reward_score:4.66
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.82|reward_score:4.82
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.92|reward_score:4.25
+reward_step:10|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.87|reward_score:2.53
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.96|reward_score:0.96
+tensor([3.4450]) {'mean_p': 0.39963369963369966, 'mean_r': 0.8803418803418803, 'mean_f1': 0.5122064210299505, 'mean_similary': 0.883976233723836, 'mean_reward': 3.445008338873589}
+==================action:9=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.20| recall: 0.22 | f1: 0.21 | similarity: 0.90|reward_score:1.96
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.84|reward_score:2.98
+reward_step:4|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.85|reward_score:3.71
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.77|reward_score:5.77
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:2.87
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.89
+tensor([3.5091]) {'mean_p': 0.454930966469428, 'mean_r': 0.8632478632478632, 'mean_f1': 0.5290148448043186, 'mean_similary': 0.8640249291420923, 'mean_reward': 3.509099153163685}
+=======评估=========
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 1.00| evluate_recall: 0.50 | evluate_f1: 0.67 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.33| evluate_recall: 0.50 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.67| evluate_recall: 1.00 | evluate_f1: 0.80 |
+evluate_precision: 0.22| evluate_recall: 0.67 | evluate_f1: 0.33 |
+evluate_precision: 0.25| evluate_recall: 0.33 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.3515873015873016
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_15.pth
+evluate_precision: 1.00| evluate_recall: 0.33 | evluate_f1: 0.50 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.33| evluate_recall: 0.50 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 1.00 | evluate_f1: 0.67 |
+evluate_precision: 0.40| evluate_recall: 0.67 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.38611111111111107
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_15.pth
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.33| evluate_recall: 0.50 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 1.00 | evluate_f1: 0.67 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.17| evluate_recall: 0.33 | evluate_f1: 0.22 |
+evluate_precision: 0.75| evluate_recall: 0.60 | evluate_f1: 0.67 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.5435185185185185
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_15.pth
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.33| evluate_recall: 0.50 | evluate_f1: 0.40 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 1.00 | evluate_f1: 0.67 |
+evluate_precision: 0.43| evluate_recall: 1.00 | evluate_f1: 0.60 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 0.75| evluate_recall: 0.60 | evluate_f1: 0.67 |
+evluate_precision: 0.67| evluate_recall: 0.67 | evluate_f1: 0.67 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.638888888888889
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models2\models-\models3\models4\models-\models4\models9_15.pth
+======评估结果=======
+Epoch 15: F1=0.6389
+Best p:0.5898809523809524
+Best r:0.8138888888888888
+Best Prompt: 从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。示例输入：亿纬锂能：与德方纳米合资建设的年产11万吨磷酸铁锂项目已满产有投资者问，磷酸铁锂电池现在市占率达到70%，是以后发展趋势，为保障今后供应，磷酸铁锂正极材料作为重要原材料，请问贵司是否已经自建磷酸铁锂正极材料生产线，产能多少万吨，2024年上半年产量达到多少？今后如何规划？亿纬锂能在互动平台表示，尊敬的投资者，您好！截止2024年第三季度，公司与德方纳米在云南曲靖合资建设的年产11万吨磷酸铁锂项目已满产且全部产能供应公司。未来，公司将继续深化产业链合资公司融合协同，不断升级供应链合资公司的成本优势和协同效应，保持公司产品市场竞争力。谢谢您的关注！ 示例输出：（亿纬锂能，“生产”，磷酸铁锂正极材料），（云南曲靖，“生产”，磷酸铁锂）示例输入：剑桥科技：不便披露与华为合作的光模块具体型号及合作领域细节有投资者问剑桥科技(603083)，董秘您好！剑桥科技目前主要供应华为光模块领域，是那些型号产品？与华为合作还有其他相关领域吗？谢谢！剑桥科技在互动平台表示，尊敬的投资者，您好！关于公司与客户在光模块具体型号产品以及其他合作领域的详细信息，涉及到公司商业合作的细节内容，恕不便对外披露。若相关事项达到信息披露标准，公司将依据法律法规及时履行信息披露义务。感谢您对公司的关注。 示例输出：（剑桥科技，“生产”，光模块），（剑桥科技，“供应商”，华为）示例输入：董秘回复|节能铁汉：公司迪拜分公司已于近日收到第一期工程预付款约1.41亿阿联酋迪拉姆有投资者问，尊敬的上市公司领导您好：请问长盈没有向META的AI眼镜供货么？国内AR眼镜向哪几家供货了可否说明？长盈精密在互动平台表示，您好。公司有向此款AI眼镜提供结构件产品。至于您提及的AR眼镜项目，鉴于公司与客户的保密协议，公司不能回复您的问题。请您见谅。谢谢。 示例输出：（长盈精密，“供应商”，META），（长盈精密，“生产”，AI眼镜结构件产品），（结构件产品，“构成”，AI眼镜）示例输入：博实结：与移为通信的物联网智能终端互为可比产品有投资者问，你们和移为通信是否有竞争关系博实结在互动平台表示，公司主要从事物联网智能化硬件产品的研发设计、生产和销售，以通信、定位、AI等技术应用为核心，基于自研无线通信模组，为物联网众多应用场景提供智能终端产品及配套解决方案，公司的乘用车定位终端与移为通信的物联网智能终端互为可比产品。 示例输出：（博实结，“生产”，无线通信模组），（博实结，“生产”，乘用车定位终端），（移为通信，“生产”，物联网智能终端）
+Best action:[8, 8, 8, 8]
+BEST_GLOBAL_F1:从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。示例输入：亿纬锂能：与德方纳米合资建设的年产11万吨磷酸铁锂项目已满产有投资者问，磷酸铁锂电池现在市占率达到70%，是以后发展趋势，为保障今后供应，磷酸铁锂正极材料作为重要原材料，请问贵司是否已经自建磷酸铁锂正极材料生产线，产能多少万吨，2024年上半年产量达到多少？今后如何规划？亿纬锂能在互动平台表示，尊敬的投资者，您好！截止2024年第三季度，公司与德方纳米在云南曲靖合资建设的年产11万吨磷酸铁锂项目已满产且全部产能供应公司。未来，公司将继续深化产业链合资公司融合协同，不断升级供应链合资公司的成本优势和协同效应，保持公司产品市场竞争力。谢谢您的关注！ 示例输出：（亿纬锂能，“生产”，磷酸铁锂正极材料），（云南曲靖，“生产”，磷酸铁锂）示例输入：剑桥科技：不便披露与华为合作的光模块具体型号及合作领域细节有投资者问剑桥科技(603083)，董秘您好！剑桥科技目前主要供应华为光模块领域，是那些型号产品？与华为合作还有其他相关领域吗？谢谢！剑桥科技在互动平台表示，尊敬的投资者，您好！关于公司与客户在光模块具体型号产品以及其他合作领域的详细信息，涉及到公司商业合作的细节内容，恕不便对外披露。若相关事项达到信息披露标准，公司将依据法律法规及时履行信息披露义务。感谢您对公司的关注。 示例输出：（剑桥科技，“生产”，光模块），（剑桥科技，“供应商”，华为）示例输入：董秘回复|节能铁汉：公司迪拜分公司已于近日收到第一期工程预付款约1.41亿阿联酋迪拉姆有投资者问，尊敬的上市公司领导您好：请问长盈没有向META的AI眼镜供货么？国内AR眼镜向哪几家供货了可否说明？长盈精密在互动平台表示，您好。公司有向此款AI眼镜提供结构件产品。至于您提及的AR眼镜项目，鉴于公司与客户的保密协议，公司不能回复您的问题。请您见谅。谢谢。 示例输出：（长盈精密，“供应商”，META），（长盈精密，“生产”，AI眼镜结构件产品），（结构件产品，“构成”，AI眼镜）示例输入：博实结：与移为通信的物联网智能终端互为可比产品有投资者问，你们和移为通信是否有竞争关系博实结在互动平台表示，公司主要从事物联网智能化硬件产品的研发设计、生产和销售，以通信、定位、AI等技术应用为核心，基于自研无线通信模组，为物联网众多应用场景提供智能终端产品及配套解决方案，公司的乘用车定位终端与移为通信的物联网智能终端互为可比产品。 示例输出：（博实结，“生产”，无线通信模组），（博实结，“生产”，乘用车定位终端），（移为通信，“生产”，物联网智能终端）
+==================action:6=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.81|reward_score:3.31
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.40| recall: 0.22 | f1: 0.29 | similarity: 0.87|reward_score:2.30
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.86|reward_score:3.01
+reward_step:4|precision: 0.29| recall: 1.00 | f1: 0.44 | similarity: 0.91|reward_score:3.13
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.79|reward_score:2.45
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:2.87
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.0598]) {'mean_p': 0.3525500140884756, 'mean_r': 0.8247863247863247, 'mean_f1': 0.4352869352869353, 'mean_similary': 0.8833166411534586, 'mean_reward': 3.0597513175881352}
+==================action:0=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.94|reward_score:0.94
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:8|precision: 0.20| recall: 0.50 | f1: 0.29 | similarity: 0.81|reward_score:2.24
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.72|reward_score:0.72
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.5633]) {'mean_p': 0.44487179487179485, 'mean_r': 0.7692307692307693, 'mean_f1': 0.5347985347985348, 'mean_similary': 0.8892760457824436, 'mean_reward': 3.5632687197751185}
+==================action:5=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.82|reward_score:4.15
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.40| recall: 0.44 | f1: 0.42 | similarity: 0.94|reward_score:3.04
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:4|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.92|reward_score:3.78
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.47|reward_score:4.47
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.81|reward_score:2.47
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:2.87
+reward_step:11|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.94|reward_score:5.23
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.5225]) {'mean_p': 0.43974358974358974, 'mean_r': 0.7264957264957265, 'mean_f1': 0.5320223636013109, 'mean_similary': 0.8623883883464031, 'mean_reward': 3.522500206352958}
+==================action:9=============================
+
+
+1. 从文本中识别出涉及生产、供应和合作等方面的关系，并标注公司与其相关方（如生产商、供应商、合作伙伴等）之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。需要注意，"公司"指的是经济实体，其名称可能构成“有限责任公司”或“股份有限公司”，也可能在新闻中用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品可以是满足人们某种需求的任何东西，无论是有形物品、无形服务，还是组织、观念或它们的组合。请特别留意实体的位置，确保准确提取出关系的起始点和终结点。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，并明确标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请记住，公司是经济实体，通常以“有限责任公司”或“股份有限公司”结尾，新闻中也可能使用股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是能够满足人类需求的任何物品、服务、组织、观念或它们的组合。在提取过程中，请注意识别实体的具体位置，确保关系的准确起点和终点。
+
+3. 在文本中提取涉及生产、供应和合作等方面的关系，并标注公司与其产品、服务、设备的生产商、供应商或合作伙伴之间的关系类型。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。其中，“公司”指的是一个经济实体，名称一般包括“有限责任公司”或“股份有限公司”，也有可能在新闻报道中用股票名称代指，如“小米公司”、“小米科技有限责任公司”等。产品指的是可以满足需求的任何东西，可能是有形物品、无形服务，或两者的结合。请确保准确识别实体的起始和终止位置，以正确提取关系。
+
+4. 从文本中分析并提取与生产、供应、合作等相关的公司间关系，明确标注公司与其生产商、供应商、合作伙伴等之间的具体关系类型，如：“生产”、“供应商”、“合作”等。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。注意，公司是指经济实体，通常名称中构成“有限责任公司”或“股份有限公司”，在新闻报道中也可能通过股票名称代指公司，如“小米公司”或“小米科技有限责任公司”等。产品是指任何满足需求的物品、服务、组织、观念等，可能是有形的，也可能是无形的。在关系提取时，请确保准确识别各实体的位置，以便正确标注关系的起点和终点。
+
+供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司的P产品的客户是B公司，则可以抽取出(A, "供应商",B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。A公司供货B公司，则可以抽取出(A, "供应商", B)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。 请以三元组形式输出：(实体1, 关系, 实体2)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)A公司是B公司P产品的供应商，则可以抽取出(A, "供应商", B)，(A, "生产", P)。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 注意识别实体位置，确保正确提取关系的起点和终点。B公司是A公司的客户，则可以抽取出(A, "供应商", B)
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.85|reward_score:5.85
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.92|reward_score:4.25
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.89|reward_score:2.56
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.4712]) {'mean_p': 0.4076923076923077, 'mean_r': 0.8461538461538461, 'mean_f1': 0.517948717948718, 'mean_similary': 0.8814413421123456, 'mean_reward': 3.4711849318559356}
+结束啦
+ok

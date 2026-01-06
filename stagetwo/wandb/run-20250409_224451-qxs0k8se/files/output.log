@@ -1,0 +1,360 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   0%|          | 0/20 [00:00<?, ?it/s]
+==================action:2=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司供应商产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（供应商/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司供应商P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司供应商P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供应商B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+    #
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.76|reward_score:3.62
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.83| recall: 0.56 | f1: 0.67 | similarity: 0.95|reward_score:4.28
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.90
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.94|reward_score:3.44
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 1.00| recall: 0.50 | f1: 0.67 | similarity: 0.91|reward_score:4.25
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([3.0047]) {'mean_p': 0.49230769230769234, 'mean_r': 0.5042735042735043, 'mean_f1': 0.4772893772893773, 'mean_similary': 0.6182497364588273, 'mean_reward': 3.0046966229057137}
+==================action:6=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司供应商产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（供应商/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司供应商P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司供应商P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供应商B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+    #                         供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.76|reward_score:3.62
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.31| recall: 0.44 | f1: 0.36 | similarity: 0.95|reward_score:2.77
+reward_step:3|precision: 0.10| recall: 3.00 | f1: 0.20 | similarity: 0.88|reward_score:1.88
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.94|reward_score:3.44
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.95|reward_score:4.95
+reward_step:9|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.78|reward_score:4.11
+reward_step:10|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.92|reward_score:4.25
+reward_step:11|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.94|reward_score:5.23
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+tensor([3.6251]) {'mean_p': 0.4918826089913623, 'mean_r': 0.9188034188034189, 'mean_f1': 0.5711954711954712, 'mean_similary': 0.7691053469437634, 'mean_reward': 3.6250827029211194}
+==================action:2=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司供应商产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（供应商/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司供应商P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司供应商P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供应商B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+    #                         供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.74|reward_score:4.08
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 1.00| recall: 0.56 | f1: 0.71 | similarity: 0.95|reward_score:4.53
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:4|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.94|reward_score:3.44
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.92|reward_score:3.78
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:10|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:11|precision: 0.60| recall: 1.00 | f1: 0.75 | similarity: 0.95|reward_score:4.70
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+tensor([3.2672]) {'mean_p': 0.47435897435897434, 'mean_r': 0.6196581196581197, 'mean_f1': 0.5130036630036631, 'mean_similary': 0.7021929442007224, 'mean_reward': 3.267211259219038}
+==================action:7=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司供应商产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（供应商/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司供应商P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司供应商P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供应商B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+    #                         供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.92|reward_score:4.25
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 1.00| recall: 0.56 | f1: 0.71 | similarity: 0.95|reward_score:4.53
+reward_step:3|precision: 0.21| recall: 3.00 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.94|reward_score:3.44
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.95|reward_score:4.95
+reward_step:9|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.23
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.85|reward_score:0.85
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+tensor([3.6920]) {'mean_p': 0.5421245421245422, 'mean_r': 0.8504273504273504, 'mean_f1': 0.5805860805860805, 'mean_similary': 0.7891146339688981, 'mean_reward': 3.6920450368993007}
+==================action:3=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司供应商产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（供应商/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司供应商P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司供应商P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供应商B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+    #                         供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.70|reward_score:3.20
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.50| recall: 0.56 | f1: 0.53 | similarity: 0.85|reward_score:3.48
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.90
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.94|reward_score:4.94
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.94|reward_score:3.44
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 1.00| recall: 0.50 | f1: 0.67 | similarity: 0.91|reward_score:4.25
+reward_step:9|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.92|reward_score:5.20
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.73|reward_score:3.23
+reward_step:11|precision: 0.43| recall: 1.00 | f1: 0.60 | similarity: 0.91|reward_score:3.91
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([3.8651]) {'mean_p': 0.5778388278388278, 'mean_r': 0.735042735042735, 'mean_f1': 0.6115481010217851, 'mean_similary': 0.8073546000319887, 'mean_reward': 3.865095105140915}
+==================action:6=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司供应商产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（供应商/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司供应商P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司供应商P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供应商B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+    #                         供应商关系：如果句子中描述了A公司向B公司供应商产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品) 请确定关系的方向，明确关系的主体和客体。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.74|reward_score:4.08
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 1.00| recall: 0.67 | f1: 0.80 | similarity: 0.95|reward_score:4.95
+reward_step:3|precision: 0.10| recall: 3.00 | f1: 0.19 | similarity: 0.87|reward_score:1.81
+reward_step:4|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.92|reward_score:2.92
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.94|reward_score:4.28
+reward_step:9|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.23
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.86|reward_score:0.86
+reward_step:11|precision: 0.38| recall: 1.00 | f1: 0.55 | similarity: 0.90|reward_score:3.63
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([3.8764]) {'mean_p': 0.5619313482216708, 'mean_r': 0.9358974358974359, 'mean_f1': 0.6102272727272727, 'mean_similary': 0.8252638293135947, 'mean_reward': 3.876400192949958}
+=======评估=========
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+evluate_precision: 1.00| evluate_recall: 0.50 | evluate_f1: 0.67 |
+evluate_precision: 0.50| evluate_recall: 2.00 | evluate_f1: 0.80 |
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+TimeoutError: _ssl.c:990: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 149, in train_agent
+    best_p,best_r,best_f1, best_prompt, best_actions = evaluate(q_network, state_model, reward, val_dataset, initial_prompt,model_save_path,i_episode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 219, in evaluate
+    p, r, f1 = reward.evaluate_score(text, gold_triples, new_prompt)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 406, in evaluate_score
+    hypos = self.generator.val_generate(
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 64, in val_generate
+    generated_texts=chatGPT_extract(formatted_template)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 77, in chatGPT_extract
+    completion = client.chat.completions.create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 317, in handle_request
+    stream = stream.start_tls(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 163, in start_tls
+    sock = ssl_context.wrap_socket(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+TimeoutError: _ssl.c:990: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 149, in train_agent
+    best_p,best_r,best_f1, best_prompt, best_actions = evaluate(q_network, state_model, reward, val_dataset, initial_prompt,model_save_path,i_episode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 219, in evaluate
+    p, r, f1 = reward.evaluate_score(text, gold_triples, new_prompt)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 406, in evaluate_score
+    hypos = self.generator.val_generate(
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 64, in val_generate
+    generated_texts=chatGPT_extract(formatted_template)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\promptPredict.py", line 77, in chatGPT_extract
+    completion = client.chat.completions.create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 317, in handle_request
+    stream = stream.start_tls(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_backends\sync.py", line 163, in start_tls
+    sock = ssl_context.wrap_socket(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt

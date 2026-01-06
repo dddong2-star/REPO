@@ -1,0 +1,15 @@
+{"time":"2025-07-01T10:21:47.1868319+08:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\offline-run-20250701_102145-keix7scj\\logs\\debug-core.log"}
+{"time":"2025-07-01T10:21:48.0102288+08:00","level":"WARN","msg":"GraphQL client is nil, skipping feature loading"}
+{"time":"2025-07-01T10:21:48.0107523+08:00","level":"INFO","msg":"stream: created new stream","id":"keix7scj"}
+{"time":"2025-07-01T10:21:48.0107523+08:00","level":"INFO","msg":"stream: started","id":"keix7scj"}
+{"time":"2025-07-01T10:21:48.0107523+08:00","level":"INFO","msg":"handler: started","stream_id":"keix7scj"}
+{"time":"2025-07-01T10:21:48.0107523+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"keix7scj"}
+{"time":"2025-07-01T10:21:48.0107523+08:00","level":"INFO","msg":"sender: started","stream_id":"keix7scj"}
+{"time":"2025-07-01T10:21:48.0155213+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-01T10:21:59.1056276+08:00","level":"INFO","msg":"stream: closing","id":"keix7scj"}
+{"time":"2025-07-01T10:21:59.1056276+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-01T10:21:59.1056276+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-01T10:21:59.1056276+08:00","level":"INFO","msg":"handler: closed","stream_id":"keix7scj"}
+{"time":"2025-07-01T10:21:59.1056276+08:00","level":"INFO","msg":"sender: closed","stream_id":"keix7scj"}
+{"time":"2025-07-01T10:21:59.1056276+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"keix7scj"}
+{"time":"2025-07-01T10:21:59.106132+08:00","level":"INFO","msg":"stream: closed","id":"keix7scj"}

@@ -1,0 +1,16 @@
+{"time":"2025-04-04T20:52:45.8505232+08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-04-04T20:52:45.8510425+08:00","level":"INFO","msg":"created symlink","path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250404_205245-zlw4cyex\\logs\\debug-core.log"}
+{"time":"2025-04-04T20:52:45.9619078+08:00","level":"INFO","msg":"created new stream","id":"zlw4cyex"}
+{"time":"2025-04-04T20:52:45.9619078+08:00","level":"INFO","msg":"stream: started","id":"zlw4cyex"}
+{"time":"2025-04-04T20:52:45.9619078+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"zlw4cyex"}
+{"time":"2025-04-04T20:52:45.9619078+08:00","level":"INFO","msg":"handler: started","stream_id":"zlw4cyex"}
+{"time":"2025-04-04T20:52:45.9619078+08:00","level":"INFO","msg":"sender: started","stream_id":"zlw4cyex"}
+{"time":"2025-04-04T20:52:46.4590709+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-04T21:19:53.2276448+08:00","level":"INFO","msg":"stream: closing","id":"zlw4cyex"}
+{"time":"2025-04-04T21:19:53.2276448+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-04T21:19:53.2281615+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-04T21:19:54.3792655+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-04T21:19:54.7913117+08:00","level":"INFO","msg":"handler: closed","stream_id":"zlw4cyex"}
+{"time":"2025-04-04T21:19:54.7913117+08:00","level":"INFO","msg":"sender: closed","stream_id":"zlw4cyex"}
+{"time":"2025-04-04T21:19:54.7913117+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"zlw4cyex"}
+{"time":"2025-04-04T21:19:54.7913117+08:00","level":"INFO","msg":"stream: closed","id":"zlw4cyex"}

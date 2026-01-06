@@ -1,0 +1,836 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   5%|▌         | 1/20 [01:24<26:38, 84.11s/it, episode=0]
+==================action:0=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.36| recall: 0.44 | f1: 0.40 | similarity: 0.95|reward_score:2.95
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.78|reward_score:5.78
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:4.91
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.86|reward_score:0.86
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.89
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.75|reward_score:2.75
+reward_step:9|precision: 0.25| recall: 0.33 | f1: 0.29 | similarity: 0.91|reward_score:2.34
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.68|reward_score:0.68
+tensor([2.7746]) {'mean_p': 0.29848484848484846, 'mean_r': 0.6367521367521368, 'mean_f1': 0.38608058608058615, 'mean_similary': 0.8442041165060373, 'mean_reward': 2.774607046908968}
+==================action:5=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+错误信息：Connection error.
+reward_step:1|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.88|reward_score:2.88
+reward_step:2|precision: 0.33| recall: 0.44 | f1: 0.38 | similarity: 0.94|reward_score:2.85
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.53|reward_score:0.53
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.93|reward_score:4.26
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.77|reward_score:0.77
+tensor([2.1394]) {'mean_p': 0.21794871794871795, 'mean_r': 0.3803418803418804, 'mean_f1': 0.2754578754578754, 'mean_similary': 0.7621479530670704, 'mean_reward': 2.1394373303564476}
+==================action:6=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 注意识别实体位置，确保正确提取关系的起点和终点。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.68|reward_score:3.54
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.10| recall: 0.11 | f1: 0.11 | similarity: 0.90|reward_score:1.43
+reward_step:3|precision: 0.10| recall: 3.00 | f1: 0.19 | similarity: 0.87|reward_score:1.81
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.86|reward_score:0.86
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.75|reward_score:0.75
+tensor([2.5848]) {'mean_p': 0.3023159636062862, 'mean_r': 0.6239316239316239, 'mean_f1': 0.3433993637941007, 'mean_similary': 0.8678501777244494, 'mean_reward': 2.5848469966949534}
+==================action:1=============================
+
+
+1. 从文本中识别涉及生产、供应、合作等的关系，提取公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相关关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意识别实体的位置，确保关系的起点和终点提取准确无误。
+    - 供应商关系：若句子中描述A公司向B公司提供产品，则抽取结果为(A公司,"供应商",B公司)。
+    - 生产关系：若句子中描述A公司生产X产品，则抽取结果为(A公司,"生产",X产品)。
+    - 构成关系：若句子中描述P产品作为X产品的组成部分，则抽取结果为(P产品,"构成",X产品)。
+
+2. 从文本中提取涉及生产、供应、合作等相关关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相应的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的位置，以正确提取关系的起点与终点。
+    - 供应商关系：若文本提到A公司向B公司提供产品，应提取为(A公司,"供应商",B公司)。
+    - 生产关系：若提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若提到P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，识别涉及的公司及其产品、服务或设备的生产商、供应商、合作伙伴等，并标明对应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意实体的准确定位，确保正确提取关系的起点和终点。
+    - 供应商关系：如果描述A公司向B公司供应产品，抽取为(A公司,"供应商",B公司)。
+    - 生产关系：若句子提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+4. 从文本中提取涉及生产、供应、合作等关系，识别并标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。确保在提取关系时，正确识别实体位置，准确标注关系的起点和终点。
+    - 供应商关系：如果描述了A公司向B公司供应产品，则结果为(A公司,"供应商",B公司)。
+    - 生产关系：如果描述了A公司生产X产品，则结果为(A公司,"生产",X产品)。
+    - 构成关系：如果P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.67| recall: 0.44 | f1: 0.53 | similarity: 0.90|reward_score:3.56
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.91
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.88|reward_score:3.38
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.7565]) {'mean_p': 0.4935897435897435, 'mean_r': 0.8034188034188035, 'mean_f1': 0.5717948717948718, 'mean_similary': 0.897574426845098, 'mean_reward': 3.7565487858194575}
+==================action:9=============================
+
+
+1. 从文本中识别涉及生产、供应、合作等的关系，提取公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相关关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意识别实体的位置，确保关系的起点和终点提取准确无误。
+    - 供应商关系：若句子中描述A公司向B公司提供产品，则抽取结果为(A公司,"供应商",B公司)。
+    - 生产关系：若句子中描述A公司生产X产品，则抽取结果为(A公司,"生产",X产品)。
+    - 构成关系：若句子中描述P产品作为X产品的组成部分，则抽取结果为(P产品,"构成",X产品)。
+
+2. 从文本中提取涉及生产、供应、合作等相关关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相应的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的位置，以正确提取关系的起点与终点。
+    - 供应商关系：若文本提到A公司向B公司提供产品，应提取为(A公司,"供应商",B公司)。
+    - 生产关系：若提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若提到P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，识别涉及的公司及其产品、服务或设备的生产商、供应商、合作伙伴等，并标明对应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意实体的准确定位，确保正确提取关系的起点和终点。
+    - 供应商关系：如果描述A公司向B公司供应产品，抽取为(A公司,"供应商",B公司)。
+    - 生产关系：若句子提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+4. 从文本中提取涉及生产、供应、合作等关系，识别并标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。确保在提取关系时，正确识别实体位置，准确标注关系的起点和终点。
+    - 供应商关系：如果描述了A公司向B公司供应产品，则结果为(A公司,"供应商",B公司)。
+    - 生产关系：如果描述了A公司生产X产品，则结果为(A公司,"生产",X产品)。
+    - 构成关系：如果P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+A公司供货B公司，则可以抽取出(A, "供应商", B)
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:2|precision: 0.50| recall: 0.44 | f1: 0.47 | similarity: 0.94|reward_score:3.30
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:4.24
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([2.7731]) {'mean_p': 0.3333333333333333, 'mean_r': 0.4572649572649573, 'mean_f1': 0.37978883861236795, 'mean_similary': 0.8741819868485131, 'mean_reward': 2.7731261799103537}
+==================action:5=============================
+
+
+1. 从文本中识别涉及生产、供应、合作等的关系，提取公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相关关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意识别实体的位置，确保关系的起点和终点提取准确无误。
+    - 供应商关系：若句子中描述A公司向B公司提供产品，则抽取结果为(A公司,"供应商",B公司)。
+    - 生产关系：若句子中描述A公司生产X产品，则抽取结果为(A公司,"生产",X产品)。
+    - 构成关系：若句子中描述P产品作为X产品的组成部分，则抽取结果为(P产品,"构成",X产品)。
+
+2. 从文本中提取涉及生产、供应、合作等相关关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相应的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的位置，以正确提取关系的起点与终点。
+    - 供应商关系：若文本提到A公司向B公司提供产品，应提取为(A公司,"供应商",B公司)。
+    - 生产关系：若提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若提到P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，识别涉及的公司及其产品、服务或设备的生产商、供应商、合作伙伴等，并标明对应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意实体的准确定位，确保正确提取关系的起点和终点。
+    - 供应商关系：如果描述A公司向B公司供应产品，抽取为(A公司,"供应商",B公司)。
+    - 生产关系：若句子提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+4. 从文本中提取涉及生产、供应、合作等关系，识别并标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。确保在提取关系时，正确识别实体位置，准确标注关系的起点和终点。
+    - 供应商关系：如果描述了A公司向B公司供应产品，则结果为(A公司,"供应商",B公司)。
+    - 生产关系：如果描述了A公司生产X产品，则结果为(A公司,"生产",X产品)。
+    - 构成关系：如果P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+A公司供货B公司，则可以抽取出(A, "供应商", B) 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.30| recall: 0.33 | f1: 0.32 | similarity: 0.94|reward_score:2.52
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 1.00| recall: 0.50 | f1: 0.67 | similarity: 0.91|reward_score:4.25
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.23
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.48|reward_score:0.48
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([3.9135]) {'mean_p': 0.555128205128205, 'mean_r': 0.8333333333333334, 'mean_f1': 0.6165991902834009, 'mean_similary': 0.8305488944894226, 'mean_reward': 3.9135448459064266}
+=======评估=========
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.18| evluate_recall: 2.00 | evluate_f1: 0.33 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.14| evluate_recall: 0.50 | evluate_f1: 0.22 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.25| evluate_recall: 0.50 | evluate_f1: 0.33 |
+evluate_precision: 0.17| evluate_recall: 0.33 | evluate_f1: 0.22 |
+evluate_precision: 0.20| evluate_recall: 0.33 | evluate_f1: 0.25 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.3050925925925926
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models0\models-\models5\models2\models-\models5\models3_5.pth
+evluate_precision: 1.00| evluate_recall: 0.67 | evluate_f1: 0.80 |
+evluate_precision: 1.00| evluate_recall: 0.50 | evluate_f1: 0.67 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.17| evluate_recall: 0.50 | evluate_f1: 0.25 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.3097222222222223
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models2\models0\models-\models5\models2\models-\models5\models3_5.pth
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.20| evluate_recall: 0.50 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.20| evluate_recall: 0.33 | evluate_f1: 0.25 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.67| evluate_recall: 0.67 | evluate_f1: 0.67 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.25297619047619047
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.40| evluate_recall: 2.00 | evluate_f1: 0.67 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.25| evluate_recall: 0.50 | evluate_f1: 0.33 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.20| evluate_recall: 0.33 | evluate_f1: 0.25 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.2625
+======评估结果=======
+Epoch 5: F1=0.3097
+Best p:0.325
+Best r:0.4166666666666667
+Best Prompt: 从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+Best action:[0, 0]
+BEST_GLOBAL_F1:从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。
+==================action:7=============================
+
+
+1. 从文本中识别涉及生产、供应、合作等的关系，提取公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相关关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意识别实体的位置，确保关系的起点和终点提取准确无误。
+    - 供应商关系：若句子中描述A公司向B公司提供产品，则抽取结果为(A公司,"供应商",B公司)。
+    - 生产关系：若句子中描述A公司生产X产品，则抽取结果为(A公司,"生产",X产品)。
+    - 构成关系：若句子中描述P产品作为X产品的组成部分，则抽取结果为(P产品,"构成",X产品)。
+
+2. 从文本中提取涉及生产、供应、合作等相关关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相应的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的位置，以正确提取关系的起点与终点。
+    - 供应商关系：若文本提到A公司向B公司提供产品，应提取为(A公司,"供应商",B公司)。
+    - 生产关系：若提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若提到P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，识别涉及的公司及其产品、服务或设备的生产商、供应商、合作伙伴等，并标明对应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意实体的准确定位，确保正确提取关系的起点和终点。
+    - 供应商关系：如果描述A公司向B公司供应产品，抽取为(A公司,"供应商",B公司)。
+    - 生产关系：若句子提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+4. 从文本中提取涉及生产、供应、合作等关系，识别并标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。确保在提取关系时，正确识别实体位置，准确标注关系的起点和终点。
+    - 供应商关系：如果描述了A公司向B公司供应产品，则结果为(A公司,"供应商",B公司)。
+    - 生产关系：如果描述了A公司生产X产品，则结果为(A公司,"生产",X产品)。
+    - 构成关系：如果P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+A公司供货B公司，则可以抽取出(A, "供应商", B) 注意识别实体位置，确保正确提取关系的起点和终点。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.42| recall: 0.56 | f1: 0.48 | similarity: 0.94|reward_score:3.32
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.92|reward_score:5.92
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:5.94
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.92|reward_score:0.92
+tensor([3.6863]) {'mean_p': 0.48846153846153845, 'mean_r': 0.811965811965812, 'mean_f1': 0.5725274725274726, 'mean_similary': 0.8236434423687296, 'mean_reward': 3.6862808050060925}
+==================action:3=============================
+
+
+1. 从文本中识别涉及生产、供应、合作等的关系，提取公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相关关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意识别实体的位置，确保关系的起点和终点提取准确无误。
+    - 供应商关系：若句子中描述A公司向B公司提供产品，则抽取结果为(A公司,"供应商",B公司)。
+    - 生产关系：若句子中描述A公司生产X产品，则抽取结果为(A公司,"生产",X产品)。
+    - 构成关系：若句子中描述P产品作为X产品的组成部分，则抽取结果为(P产品,"构成",X产品)。
+
+2. 从文本中提取涉及生产、供应、合作等相关关系，识别出公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注相应的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的位置，以正确提取关系的起点与终点。
+    - 供应商关系：若文本提到A公司向B公司提供产品，应提取为(A公司,"供应商",B公司)。
+    - 生产关系：若提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若提到P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，识别涉及的公司及其产品、服务或设备的生产商、供应商、合作伙伴等，并标明对应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请注意实体的准确定位，确保正确提取关系的起点和终点。
+    - 供应商关系：如果描述A公司向B公司供应产品，抽取为(A公司,"供应商",B公司)。
+    - 生产关系：若句子提到A公司生产X产品，抽取为(A公司,"生产",X产品)。
+    - 构成关系：若P产品是X产品的一部分，抽取为(P产品,"构成",X产品)。
+
+4. 从文本中提取涉及生产、供应、合作等关系，识别并标注公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。确保在提取关系时，正确识别实体位置，准确标注关系的起点和终点。
+    - 供应商关系：如果描述了A公司向B公司供应产品，则结果为(A公司,"供应商",B公司)。
+    - 生产关系：如果描述了A公司生产X产品，则结果为(A公司,"生产",X产品)。
+    - 构成关系：如果P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+A公司供货B公司，则可以抽取出(A, "供应商", B) 注意识别实体位置，确保正确提取关系的起点和终点。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 1.00| recall: 0.22 | f1: 0.36 | similarity: 0.91|reward_score:2.73
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.95|reward_score:4.95
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:0.87
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.88|reward_score:3.38
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.74|reward_score:5.74
+tensor([4.0289]) {'mean_p': 0.596153846153846, 'mean_r': 0.8632478632478632, 'mean_f1': 0.6331002331002331, 'mean_similary': 0.8634123136599856, 'mean_reward': 4.028913479161151}
+==================action:1=============================
+
+
+1. 从文本中识别并提取生产、供应、合作等相关的关系，找出公司及其产品、服务或设备与生产商、供应商、合作伙伴等的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位实体，确保关系的起点和终点提取无误。
+   - 供应商关系：若文本描述A公司为B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，识别出涉及的公司以及它们的产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的准确位置，保证关系的起点和终点无误。
+   - 供应商关系：如果文本中提到A公司向B公司提供产品，抽取为(A公司,"供应商",B公司)。
+   - 生产关系：若句子中提到A公司生产X产品，应提取为(A公司,"生产",X产品)。
+   - 构成关系：如果P产品是X产品的组成部分，提取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，确定公司及其产品、服务或设备与生产商、供应商、合作伙伴等之间的联系，并标明相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位每个实体，确保关系的起点和终点清晰无误。
+   - 供应商关系：若文本中描述A公司向B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，结果应为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，结果为(P产品,"构成",X产品)。
+
+4. 从文本中提取与生产、供应、合作等相关的关系，确定公司与其产品、服务或设备的生产商、供应商、合作伙伴等之间的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保在提取关系时，能够准确识别实体的位置，确保关系的起点与终点无误。
+   - 供应商关系：如果描述了A公司向B公司供应产品，应提取为(A公司,"供应商",B公司)。
+   - 生产关系：如果描述了A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，应提取为(P产品,"构成",X产品)。
+=======================================================
+reward_step:0|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.80|reward_score:5.80
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.71|reward_score:4.05
+reward_step:2|precision: 0.57| recall: 0.44 | f1: 0.50 | similarity: 0.85|reward_score:3.35
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.86|reward_score:3.00
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.54|reward_score:3.88
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.71|reward_score:3.21
+reward_step:8|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.79|reward_score:2.45
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.49|reward_score:0.49
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([3.2514]) {'mean_p': 0.439912651451113, 'mean_r': 0.764957264957265, 'mean_f1': 0.4919413919413919, 'mean_similary': 0.7917030304909658, 'mean_reward': 3.251409990197926}
+==================action:7=============================
+
+
+1. 从文本中识别并提取生产、供应、合作等相关的关系，找出公司及其产品、服务或设备与生产商、供应商、合作伙伴等的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位实体，确保关系的起点和终点提取无误。
+   - 供应商关系：若文本描述A公司为B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，识别出涉及的公司以及它们的产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的准确位置，保证关系的起点和终点无误。
+   - 供应商关系：如果文本中提到A公司向B公司提供产品，抽取为(A公司,"供应商",B公司)。
+   - 生产关系：若句子中提到A公司生产X产品，应提取为(A公司,"生产",X产品)。
+   - 构成关系：如果P产品是X产品的组成部分，提取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，确定公司及其产品、服务或设备与生产商、供应商、合作伙伴等之间的联系，并标明相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位每个实体，确保关系的起点和终点清晰无误。
+   - 供应商关系：若文本中描述A公司向B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，结果应为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，结果为(P产品,"构成",X产品)。
+
+4. 从文本中提取与生产、供应、合作等相关的关系，确定公司与其产品、服务或设备的生产商、供应商、合作伙伴等之间的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保在提取关系时，能够准确识别实体的位置，确保关系的起点与终点无误。
+   - 供应商关系：如果描述了A公司向B公司供应产品，应提取为(A公司,"供应商",B公司)。
+   - 生产关系：如果描述了A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，应提取为(P产品,"构成",X产品)。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.82|reward_score:3.67
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.59|reward_score:0.59
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.91|reward_score:4.91
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.20| recall: 0.50 | f1: 0.29 | similarity: 0.64|reward_score:2.07
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.71|reward_score:0.71
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.98
+tensor([2.9668]) {'mean_p': 0.3474358974358975, 'mean_r': 0.6923076923076923, 'mean_f1': 0.4402930402930403, 'mean_similary': 0.7653107138016283, 'mean_reward': 2.96677591526683}
+==================action:5=============================
+
+
+1. 从文本中识别并提取生产、供应、合作等相关的关系，找出公司及其产品、服务或设备与生产商、供应商、合作伙伴等的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位实体，确保关系的起点和终点提取无误。
+   - 供应商关系：若文本描述A公司为B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，识别出涉及的公司以及它们的产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的准确位置，保证关系的起点和终点无误。
+   - 供应商关系：如果文本中提到A公司向B公司提供产品，抽取为(A公司,"供应商",B公司)。
+   - 生产关系：若句子中提到A公司生产X产品，应提取为(A公司,"生产",X产品)。
+   - 构成关系：如果P产品是X产品的组成部分，提取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，确定公司及其产品、服务或设备与生产商、供应商、合作伙伴等之间的联系，并标明相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位每个实体，确保关系的起点和终点清晰无误。
+   - 供应商关系：若文本中描述A公司向B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，结果应为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，结果为(P产品,"构成",X产品)。
+
+4. 从文本中提取与生产、供应、合作等相关的关系，确定公司与其产品、服务或设备的生产商、供应商、合作伙伴等之间的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保在提取关系时，能够准确识别实体的位置，确保关系的起点与终点无误。
+   - 供应商关系：如果描述了A公司向B公司供应产品，应提取为(A公司,"供应商",B公司)。
+   - 生产关系：如果描述了A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，应提取为(P产品,"构成",X产品)。 请确定关系的方向，明确关系的主体和客体。 注意识别实体位置，确保正确提取关系的起点和终点。
+=======================================================
+reward_step:0|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:4.81
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:2|precision: 0.29| recall: 0.44 | f1: 0.35 | similarity: 0.95|reward_score:2.69
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:6.94
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:4.06
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.49|reward_score:0.49
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:4.93
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:2.77
+reward_step:9|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.92|reward_score:5.20
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:2.87
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.65|reward_score:3.15
+tensor([3.7391]) {'mean_p': 0.4514652014652014, 'mean_r': 0.9188034188034189, 'mean_f1': 0.582433508520465, 'mean_similary': 0.8269750392835438, 'mean_reward': 3.7391425818858695}
+==================action:6=============================
+
+
+1. 从文本中识别并提取生产、供应、合作等相关的关系，找出公司及其产品、服务或设备与生产商、供应商、合作伙伴等的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位实体，确保关系的起点和终点提取无误。
+   - 供应商关系：若文本描述A公司为B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，识别出涉及的公司以及它们的产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的准确位置，保证关系的起点和终点无误。
+   - 供应商关系：如果文本中提到A公司向B公司提供产品，抽取为(A公司,"供应商",B公司)。
+   - 生产关系：若句子中提到A公司生产X产品，应提取为(A公司,"生产",X产品)。
+   - 构成关系：如果P产品是X产品的组成部分，提取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，确定公司及其产品、服务或设备与生产商、供应商、合作伙伴等之间的联系，并标明相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位每个实体，确保关系的起点和终点清晰无误。
+   - 供应商关系：若文本中描述A公司向B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，结果应为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，结果为(P产品,"构成",X产品)。
+
+4. 从文本中提取与生产、供应、合作等相关的关系，确定公司与其产品、服务或设备的生产商、供应商、合作伙伴等之间的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保在提取关系时，能够准确识别实体的位置，确保关系的起点与终点无误。
+   - 供应商关系：如果描述了A公司向B公司供应产品，应提取为(A公司,"供应商",B公司)。
+   - 生产关系：如果描述了A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，应提取为(P产品,"构成",X产品)。 请确定关系的方向，明确关系的主体和客体。 注意识别实体位置，确保正确提取关系的起点和终点。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.66|reward_score:2.66
+reward_step:1|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:5.98
+reward_step:2|precision: 0.50| recall: 0.44 | f1: 0.47 | similarity: 0.94|reward_score:3.30
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.92|reward_score:5.92
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.86|reward_score:2.86
+reward_step:7|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.68|reward_score:2.35
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:2.89
+reward_step:9|precision: 0.67| recall: 0.67 | f1: 0.67 | similarity: 0.55|reward_score:3.89
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.77|reward_score:0.77
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.83
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.95|reward_score:0.95
+tensor([3.1957]) {'mean_p': 0.39871794871794874, 'mean_r': 0.7008547008547008, 'mean_f1': 0.47209653092006043, 'mean_similary': 0.8352083570959962, 'mean_reward': 3.195691011696298}
+==================action:0=============================
+
+
+1. 从文本中识别并提取生产、供应、合作等相关的关系，找出公司及其产品、服务或设备与生产商、供应商、合作伙伴等的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位实体，确保关系的起点和终点提取无误。
+   - 供应商关系：若文本描述A公司为B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，则抽取为(P产品,"构成",X产品)。
+
+2. 从文本中提取与生产、供应、合作等相关的关系，识别出涉及的公司以及它们的产品、服务或设备的生产商、供应商、合作伙伴等，并标注正确的关系类型（例如：“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保准确识别实体的准确位置，保证关系的起点和终点无误。
+   - 供应商关系：如果文本中提到A公司向B公司提供产品，抽取为(A公司,"供应商",B公司)。
+   - 生产关系：若句子中提到A公司生产X产品，应提取为(A公司,"生产",X产品)。
+   - 构成关系：如果P产品是X产品的组成部分，提取为(P产品,"构成",X产品)。
+
+3. 从文本中识别并提取与生产、供应、合作等相关的关系，确定公司及其产品、服务或设备与生产商、供应商、合作伙伴等之间的联系，并标明相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请准确定位每个实体，确保关系的起点和终点清晰无误。
+   - 供应商关系：若文本中描述A公司向B公司提供产品，结果应为(A公司,"供应商",B公司)。
+   - 生产关系：若提到A公司生产X产品，结果应为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，结果为(P产品,"构成",X产品)。
+
+4. 从文本中提取与生产、供应、合作等相关的关系，确定公司与其产品、服务或设备的生产商、供应商、合作伙伴等之间的联系，并标注相应的关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。请确保在提取关系时，能够准确识别实体的位置，确保关系的起点与终点无误。
+   - 供应商关系：如果描述了A公司向B公司供应产品，应提取为(A公司,"供应商",B公司)。
+   - 生产关系：如果描述了A公司生产X产品，则抽取为(A公司,"生产",X产品)。
+   - 构成关系：若P产品是X产品的一部分，应提取为(P产品,"构成",X产品)。 请确定关系的方向，明确关系的主体和客体。 注意识别实体位置，确保正确提取关系的起点和终点。供应商关系：如果句子中描述了A公司向B公司提供产品，抽取结果(A公司,"供应商",B公司)。
+        生产关系：如果句子中描述了A公司生产X产品，抽取结果(A公司,"供应商",X产品)。
+        构成关系：如果句子中描述了P产品作为X产品的构成部分，抽取结果(P产品,"构成",X产品)
+=======================================================
+reward_step:0|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.48|reward_score:3.34
+reward_step:1|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.76|reward_score:3.62
+reward_step:2|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:0.65
+reward_step:3|precision: 0.23| recall: 3.00 | f1: 0.43 | similarity: 0.83|reward_score:2.97
+reward_step:4|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:4.92
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:4.24
+reward_step:6|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.87|reward_score:3.37
+reward_step:7|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.77|reward_score:5.77
+reward_step:8|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:5.93
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.84
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.71|reward_score:0.71
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.95|reward_score:0.95
+tensor([2.8702]) {'mean_p': 0.36134122287968445, 'mean_r': 0.7307692307692307, 'mean_f1': 0.426007326007326, 'mean_similary': 0.740200611307231, 'mean_reward': 2.8702372413438613}
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 226, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 226, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 226, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 110, in train_agent
+    new_prompt = REINFORCE().take_action(action, prompt)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Agent.py", line 70, in take_action
+    return self._modify_sentence_structure(prompt)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Agent.py", line 130, in _modify_sentence_structure
+    responses = self.llm_query(
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Agent.py", line 217, in llm_query
+    completion = client.chat.completions.create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1030, in _request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 226, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 226, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 268, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 133, in handle_request
+    raise exc
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 111, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 176, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpcore\_sync\http11.py", line 226, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 996, in _request
+    response = self._client.send(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 110, in train_agent
+    new_prompt = REINFORCE().take_action(action, prompt)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Agent.py", line 70, in take_action
+    return self._modify_sentence_structure(prompt)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Agent.py", line 130, in _modify_sentence_structure
+    responses = self.llm_query(
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Agent.py", line 217, in llm_query
+    completion = client.chat.completions.create(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1020, in _request
+    return self._retry_request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1098, in _retry_request
+    return self._request(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\openai\_base_client.py", line 1030, in _request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.

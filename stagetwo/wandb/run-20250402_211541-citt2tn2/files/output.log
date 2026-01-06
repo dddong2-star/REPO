@@ -1,0 +1,406 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   0%|          | 0/100 [00:00<?, ?it/s]
+==================action:0=============================
+
+
+根据下列新闻中的内容,总结新闻中的供应商关系,生产关系,构成关系。
+                            以多个三元组的形式输出。没有此类关系则输出无。
+                            关系描述如下:
+                            1. 供应商关系:
+                               如果句子中描述了A公司向B公司提供产品,可以抽取出(A, "供应商", B)。
+                            2. 生产关系:
+                               如果句子中描述了A公司生产某个产品P,可以抽取出 (A, "生产", P)。
+                            3. 构成关系:
+                               如果句子中描述了P产品作为X产品的构成部分,可以抽取出 (P, "构成", X)。
+
+                            供应关系满足一下句式:
+                            1.A公司（为/向）B公司（提供/供应）P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            2.A公司提供P产品,应用于B公司的产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            3.A公司是B公司的供应商,为B公司提供P产品,则可以抽取出(A, "供应商", B),(A, "生产", P)。
+                            4.B公司是A公司的客户,则可以抽取出(A, "供应商", B)
+                            5.A公司供货B公司,则可以抽取出(A, "供应商", B)
+                            示例输入:趣睡科技董秘回复||| 财联社4月1日电,有投资者问,小米汽车已上市,请问公司目前跟小米汽车有合作吗,公司之前回复称有跟汽车厂商合作能透露是哪几家不？趣睡科技在互动平台表示,公司作为一家专注于自有品牌科技创新家居产品的互联网零售公司,公司积极开发车载家居产品,公司新开发的车载遮阳帘等产品已陆续上线销售,并与部分国内汽车厂商开展合作,小米汽车作为公司重要客户之一。
+                            输出:（趣睡科技,"供应商",小米）,（小米,"生产",小米汽车）,（趣睡科技,"生产",车载遮阳帘）,（车载遮阳帘,"构成",小米汽车）
+
+
+=======================================================
+预测结果保存成功
+reward_step:0|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:1|precision: 0.25| recall: 0.67 | f1: 0.36 | similarity: 0.88|reward_score:0.52
+预测结果保存成功
+reward_step:2|precision: 0.40| recall: 1.00 | f1: 0.57 | similarity: 0.78|reward_score:0.63
+预测结果保存成功
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:4|precision: 0.40| recall: 0.67 | f1: 0.50 | similarity: 0.95|reward_score:0.64
+预测结果保存成功
+reward_step:5|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.95|reward_score:0.98
+预测结果保存成功
+reward_step:6|precision: 0.19| recall: 0.57 | f1: 0.29 | similarity: 0.79|reward_score:0.44
+预测结果保存成功
+reward_step:7|precision: 0.29| recall: 1.00 | f1: 0.44 | similarity: 0.90|reward_score:0.58
+预测结果保存成功
+reward_step:8|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:0.84
+预测结果保存成功
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:0.25
+预测结果保存成功
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:11|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:13|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:14|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.63|reward_score:0.19
+预测结果保存成功
+reward_step:15|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.87|reward_score:0.49
+预测结果保存成功
+reward_step:16|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.93|reward_score:0.28
+预测结果保存成功
+reward_step:17|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.92|reward_score:0.28
+预测结果保存成功
+reward_step:18|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.92|reward_score:0.28
+预测结果保存成功
+reward_step:19|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.77|reward_score:0.23
+预测结果保存成功
+reward_step:20|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:21|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.54|reward_score:0.51
+预测结果保存成功
+reward_step:22|precision: 0.25| recall: 2.00 | f1: 0.44 | similarity: 0.92|reward_score:0.59
+预测结果保存成功
+reward_step:23|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.27
+预测结果保存成功
+reward_step:24|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:25|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.88|reward_score:0.61
+预测结果保存成功
+reward_step:26|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:27|precision: 0.12| recall: 0.67 | f1: 0.20 | similarity: 0.88|reward_score:0.40
+预测结果保存成功
+reward_step:28|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.92|reward_score:0.56
+预测结果保存成功
+reward_step:29|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:30|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.27
+预测结果保存成功
+reward_step:31|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.27
+预测结果保存成功
+reward_step:32|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+预测结果保存成功
+reward_step:33|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:34|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+预测结果保存成功
+reward_step:35|precision: 0.75| recall: 1.00 | f1: 0.86 | similarity: 0.84|reward_score:0.85
+预测结果保存成功
+reward_step:36|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.90|reward_score:0.50
+预测结果保存成功
+reward_step:37|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.80|reward_score:0.24
+预测结果保存成功
+reward_step:38|precision: 0.25| recall: 0.40 | f1: 0.31 | similarity: 0.83|reward_score:0.46
+预测结果保存成功
+reward_step:39|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.92|reward_score:0.74
+预测结果保存成功
+reward_step:40|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.95|reward_score:0.29
+预测结果保存成功
+reward_step:41|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.96|reward_score:0.99
+预测结果保存成功
+reward_step:42|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.92|reward_score:0.84
+预测结果保存成功
+reward_step:43|precision: 1.00| recall: 0.67 | f1: 0.80 | similarity: 0.94|reward_score:0.84
+预测结果保存成功
+reward_step:44|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.79|reward_score:0.24
+预测结果保存成功
+reward_step:45|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.92|reward_score:0.56
+预测结果保存成功
+reward_step:46|precision: 0.11| recall: 0.20 | f1: 0.14 | similarity: 0.97|reward_score:0.39
+预测结果保存成功
+reward_step:47|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.91|reward_score:0.51
+预测结果保存成功
+reward_step:48|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:49|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.78|reward_score:0.24
+预测结果保存成功
+reward_step:50|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.91|reward_score:0.51
+预测结果保存成功
+reward_step:51|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:52|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:0.99
+预测结果保存成功
+reward_step:53|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:54|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.95|reward_score:0.98
+预测结果保存成功
+reward_step:55|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.92|reward_score:0.28
+预测结果保存成功
+reward_step:56|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.86|reward_score:0.26
+预测结果保存成功
+reward_step:57|precision: 0.33| recall: 0.33 | f1: 0.33 | similarity: 0.95|reward_score:0.52
+预测结果保存成功
+reward_step:58|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:0.98
+预测结果保存成功
+reward_step:59|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:60|precision: 0.36| recall: 0.80 | f1: 0.50 | similarity: 0.96|reward_score:0.64
+预测结果保存成功
+reward_step:61|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.63|reward_score:0.19
+预测结果保存成功
+reward_step:62|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:63|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:64|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.93|reward_score:0.28
+预测结果保存成功
+reward_step:65|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:66|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:67|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:68|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.94|reward_score:0.28
+预测结果保存成功
+reward_step:69|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.88|reward_score:0.54
+预测结果保存成功
+reward_step:70|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.82|reward_score:0.25
+预测结果保存成功
+reward_step:71|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.82|reward_score:0.24
+预测结果保存成功
+reward_step:72|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:73|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.87|reward_score:0.61
+预测结果保存成功
+reward_step:74|precision: 0.80| recall: 1.00 | f1: 0.89 | similarity: 0.94|reward_score:0.90
+预测结果保存成功
+reward_step:75|precision: 0.33| recall: 0.25 | f1: 0.29 | similarity: 0.95|reward_score:0.49
+预测结果保存成功
+reward_step:76|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.69|reward_score:0.49
+预测结果保存成功
+reward_step:77|precision: 0.50| recall: 0.30 | f1: 0.37 | similarity: 0.95|reward_score:0.55
+预测结果保存成功
+reward_step:78|precision: 0.33| recall: 0.33 | f1: 0.33 | similarity: 0.95|reward_score:0.52
+预测结果保存成功
+reward_step:79|precision: 0.40| recall: 0.67 | f1: 0.50 | similarity: 0.95|reward_score:0.64
+预测结果保存成功
+reward_step:80|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.25
+预测结果保存成功
+reward_step:81|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:82|precision: 0.38| recall: 1.00 | f1: 0.55 | similarity: 0.90|reward_score:0.65
+预测结果保存成功
+reward_step:83|precision: 0.50| recall: 0.75 | f1: 0.60 | similarity: 0.94|reward_score:0.70
+预测结果保存成功
+reward_step:84|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.95|reward_score:0.29
+预测结果保存成功
+reward_step:85|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.94|reward_score:0.28
+预测结果保存成功
+reward_step:86|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.94|reward_score:0.98
+预测结果保存成功
+reward_step:87|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.92|reward_score:0.63
+预测结果保存成功
+reward_step:88|precision: 0.45| recall: 1.00 | f1: 0.62 | similarity: 0.94|reward_score:0.72
+预测结果保存成功
+reward_step:89|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+预测结果保存成功
+reward_step:90|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:91|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.91|reward_score:0.55
+预测结果保存成功
+reward_step:92|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:93|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:94|precision: 0.80| recall: 1.00 | f1: 0.89 | similarity: 0.95|reward_score:0.91
+预测结果保存成功
+reward_step:95|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.95|reward_score:0.29
+预测结果保存成功
+reward_step:96|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.98|reward_score:0.29
+预测结果保存成功
+reward_step:97|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:0.54
+预测结果保存成功
+reward_step:98|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.87|reward_score:0.49
+预测结果保存成功
+reward_step:99|precision: 0.25| recall: 0.20 | f1: 0.22 | similarity: 0.94|reward_score:0.44
+预测结果保存成功
+reward_step:100|precision: 0.83| recall: 1.00 | f1: 0.91 | similarity: 0.94|reward_score:0.92
+预测结果保存成功
+reward_step:101|precision: 0.20| recall: 0.25 | f1: 0.22 | similarity: 0.93|reward_score:0.44
+预测结果保存成功
+reward_step:102|precision: 0.17| recall: 0.20 | f1: 0.18 | similarity: 0.89|reward_score:0.39
+预测结果保存成功
+reward_step:103|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.93|reward_score:0.28
+预测结果保存成功
+reward_step:104|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.66|reward_score:0.20
+预测结果保存成功
+reward_step:105|precision: 0.60| recall: 1.00 | f1: 0.75 | similarity: 0.66|reward_score:0.72
+预测结果保存成功
+reward_step:106|precision: 0.29| recall: 0.67 | f1: 0.40 | similarity: 0.89|reward_score:0.55
+预测结果保存成功
+reward_step:107|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.95|reward_score:0.28
+预测结果保存成功
+reward_step:108|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.27
+预测结果保存成功
+reward_step:109|precision: 1.00| recall: 0.60 | f1: 0.75 | similarity: 0.83|reward_score:0.77
+预测结果保存成功
+reward_step:110|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:111|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.98|reward_score:0.99
+预测结果保存成功
+reward_step:112|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.93|reward_score:0.51
+预测结果保存成功
+reward_step:113|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:114|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.94|reward_score:0.28
+预测结果保存成功
+reward_step:115|precision: 0.60| recall: 1.00 | f1: 0.75 | similarity: 0.95|reward_score:0.81
+预测结果保存成功
+reward_step:116|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:0.25
+预测结果保存成功
+reward_step:117|precision: 0.60| recall: 0.75 | f1: 0.67 | similarity: 0.95|reward_score:0.75
+预测结果保存成功
+reward_step:118|precision: 0.10| recall: 0.05 | f1: 0.07 | similarity: 0.95|reward_score:0.33
+预测结果保存成功
+reward_step:119|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.95|reward_score:0.99
+预测结果保存成功
+reward_step:120|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.94|reward_score:0.28
+预测结果保存成功
+reward_step:121|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:0.26
+预测结果保存成功
+reward_step:122|precision: 0.70| recall: 1.00 | f1: 0.82 | similarity: 0.89|reward_score:0.84
+预测结果保存成功
+reward_step:123|precision: 0.60| recall: 1.00 | f1: 0.75 | similarity: 0.87|reward_score:0.79
+预测结果保存成功
+reward_step:124|precision: 1.00| recall: 0.85 | f1: 0.92 | similarity: 0.91|reward_score:0.92
+预测结果保存成功
+reward_step:125|precision: 0.75| recall: 0.43 | f1: 0.55 | similarity: 0.96|reward_score:0.67
+预测结果保存成功
+reward_step:126|precision: 0.83| recall: 1.00 | f1: 0.91 | similarity: 0.95|reward_score:0.92
+预测结果保存成功
+reward_step:127|precision: 0.33| recall: 0.20 | f1: 0.25 | similarity: 0.89|reward_score:0.44
+预测结果保存成功
+reward_step:128|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.27
+预测结果保存成功
+reward_step:129|precision: 1.00| recall: 0.30 | f1: 0.46 | similarity: 0.95|reward_score:0.61
+预测结果保存成功
+reward_step:130|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.59|reward_score:0.18
+预测结果保存成功
+reward_step:131|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:0.27
+预测结果保存成功
+reward_step:132|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+预测结果保存成功
+reward_step:133|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.86|reward_score:0.61
+预测结果保存成功
+reward_step:134|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.92|reward_score:0.51
+预测结果保存成功
+reward_step:135|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:136|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:137|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+预测结果保存成功
+reward_step:138|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.74|reward_score:0.50
+预测结果保存成功
+reward_step:139|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:140|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:141|precision: 0.22| recall: 1.00 | f1: 0.36 | similarity: 0.73|reward_score:0.47
+预测结果保存成功
+reward_step:142|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:143|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.92|reward_score:0.28
+预测结果保存成功
+reward_step:144|precision: 0.57| recall: 1.00 | f1: 0.73 | similarity: 0.93|reward_score:0.79
+预测结果保存成功
+reward_step:145|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:0.62
+预测结果保存成功
+reward_step:146|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:147|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.89|reward_score:0.27
+预测结果保存成功
+reward_step:148|precision: 0.25| recall: 0.25 | f1: 0.25 | similarity: 0.93|reward_score:0.45
+预测结果保存成功
+reward_step:149|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.76|reward_score:0.23
+预测结果保存成功
+reward_step:150|precision: 0.67| recall: 0.25 | f1: 0.36 | similarity: 0.92|reward_score:0.53
+预测结果保存成功
+reward_step:151|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.90|reward_score:0.27
+预测结果保存成功
+reward_step:152|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.72|reward_score:0.50
+预测结果保存成功
+reward_step:153|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.87|reward_score:0.61
+预测结果保存成功
+reward_step:154|precision: 0.43| recall: 0.50 | f1: 0.46 | similarity: 0.95|reward_score:0.61
+预测结果保存成功
+reward_step:155|precision: 0.33| recall: 0.38 | f1: 0.35 | similarity: 0.96|reward_score:0.53
+预测结果保存成功
+reward_step:156|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+预测结果保存成功
+reward_step:157|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.85|reward_score:0.25
+预测结果保存成功
+reward_step:158|precision: 0.18| recall: 0.14 | f1: 0.16 | similarity: 0.95|reward_score:0.40
+预测结果保存成功
+reward_step:159|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.94|reward_score:0.28
+预测结果保存成功
+reward_step:160|precision: 0.44| recall: 0.67 | f1: 0.53 | similarity: 0.92|reward_score:0.65
+预测结果保存成功
+reward_step:161|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.90|reward_score:0.62
+预测结果保存成功
+reward_step:162|precision: 0.25| recall: 0.67 | f1: 0.36 | similarity: 0.91|reward_score:0.53
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\pymysql\connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\socket.py", line 857, in create_connection
+    raise err
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\socket.py", line 845, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 113, in train_agent
+    rewards_tensor, rewards_log = reward.compute_reward(text, gold_labels, new_prompt, True)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 135, in compute_reward
+    self.save_hypos(src,label,generated_triples,p,r,f1)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 443, in save_hypos
+    conn = pymysql.connect(host=IP, user='root', passwd=MYSQLPWD, db=DB)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\pymysql\connections.py", line 361, in __init__
+    self.connect()
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\pymysql\connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '39.101.141.53' (timed out)")
+Traceback (most recent call last):
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\pymysql\connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\socket.py", line 857, in create_connection
+    raise err
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\socket.py", line 845, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 113, in train_agent
+    rewards_tensor, rewards_log = reward.compute_reward(text, gold_labels, new_prompt, True)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 135, in compute_reward
+    self.save_hypos(src,label,generated_triples,p,r,f1)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Reward.py", line 443, in save_hypos
+    conn = pymysql.connect(host=IP, user='root', passwd=MYSQLPWD, db=DB)
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\pymysql\connections.py", line 361, in __init__
+    self.connect()
+  File "F:\ENV\anaconda\envs\rl-prompt-main\lib\site-packages\pymysql\connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '39.101.141.53' (timed out)")

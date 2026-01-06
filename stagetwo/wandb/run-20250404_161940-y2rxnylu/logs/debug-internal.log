@@ -1,0 +1,16 @@
+{"time":"2025-04-04T16:19:40.8397872+08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-04-04T16:19:40.8397872+08:00","level":"INFO","msg":"created symlink","path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250404_161940-y2rxnylu\\logs\\debug-core.log"}
+{"time":"2025-04-04T16:19:41.0972452+08:00","level":"INFO","msg":"created new stream","id":"y2rxnylu"}
+{"time":"2025-04-04T16:19:41.0972452+08:00","level":"INFO","msg":"stream: started","id":"y2rxnylu"}
+{"time":"2025-04-04T16:19:41.0972452+08:00","level":"INFO","msg":"handler: started","stream_id":"y2rxnylu"}
+{"time":"2025-04-04T16:19:41.0972452+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"y2rxnylu"}
+{"time":"2025-04-04T16:19:41.0972452+08:00","level":"INFO","msg":"sender: started","stream_id":"y2rxnylu"}
+{"time":"2025-04-04T16:19:41.7859831+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-04T16:33:34.4154922+08:00","level":"INFO","msg":"stream: closing","id":"y2rxnylu"}
+{"time":"2025-04-04T16:33:34.4154922+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-04T16:33:34.4160784+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-04T16:33:35.4358712+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-04T16:33:35.7961846+08:00","level":"INFO","msg":"sender: closed","stream_id":"y2rxnylu"}
+{"time":"2025-04-04T16:33:35.7961846+08:00","level":"INFO","msg":"handler: closed","stream_id":"y2rxnylu"}
+{"time":"2025-04-04T16:33:35.7961846+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"y2rxnylu"}
+{"time":"2025-04-04T16:33:35.7961846+08:00","level":"INFO","msg":"stream: closed","id":"y2rxnylu"}

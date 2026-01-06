@@ -1,0 +1,16 @@
+{"time":"2025-04-02T21:47:45.3557975+08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-04-02T21:47:45.3557975+08:00","level":"INFO","msg":"created symlink","path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250402_214745-e2cnfep6\\logs\\debug-core.log"}
+{"time":"2025-04-02T21:47:45.4672296+08:00","level":"INFO","msg":"created new stream","id":"e2cnfep6"}
+{"time":"2025-04-02T21:47:45.4672296+08:00","level":"INFO","msg":"stream: started","id":"e2cnfep6"}
+{"time":"2025-04-02T21:47:45.4672296+08:00","level":"INFO","msg":"sender: started","stream_id":"e2cnfep6"}
+{"time":"2025-04-02T21:47:45.4672296+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"e2cnfep6"}
+{"time":"2025-04-02T21:47:45.4672296+08:00","level":"INFO","msg":"handler: started","stream_id":"e2cnfep6"}
+{"time":"2025-04-02T21:47:45.9584406+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-03T00:41:01.3344006+08:00","level":"INFO","msg":"stream: closing","id":"e2cnfep6"}
+{"time":"2025-04-03T00:41:01.3344006+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-03T00:41:01.3344006+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-03T00:41:02.7414288+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-03T00:41:03.2959428+08:00","level":"INFO","msg":"handler: closed","stream_id":"e2cnfep6"}
+{"time":"2025-04-03T00:41:03.2959428+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"e2cnfep6"}
+{"time":"2025-04-03T00:41:03.2959428+08:00","level":"INFO","msg":"sender: closed","stream_id":"e2cnfep6"}
+{"time":"2025-04-03T00:41:03.2964556+08:00","level":"INFO","msg":"stream: closed","id":"e2cnfep6"}

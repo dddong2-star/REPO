@@ -1,0 +1,192 @@
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+If you want to use `BertLMHeadModel` as a standalone, add `is_decoder=True.`
+Device set to use cuda
+=======获取候选提示===========
+=======强化提示===============
+Training:   1%|          | 1/100 [01:44<2:52:24, 104.48s/it, episode=0]
+==================action:7=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.82|reward_score:91.36
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.78
+reward_step:2|precision: 0.30| recall: 0.33 | f1: 0.32 | similarity: 0.93|reward_score:59.44
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.60|reward_score:18.12
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.95
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:108.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.65|reward_score:59.58
+reward_step:9|precision: 0.33| recall: 0.33 | f1: 0.33 | similarity: 0.93|reward_score:61.27
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.88|reward_score:76.39
+reward_step:11|precision: 0.60| recall: 1.00 | f1: 0.75 | similarity: 0.92|reward_score:102.58
+reward_step:12|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.61|reward_score:58.32
+tensor([72.5561]) {'mean_p': 0.3705128205128205, 'mean_r': 0.7051282051282052, 'mean_f1': 0.47429149797570846, 'mean_similary': 0.8375635379170758, 'mean_reward': 72.55605593508314}
+==================action:2=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:26.00
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:107.91
+reward_step:2|precision: 0.25| recall: 0.11 | f1: 0.15 | similarity: 0.84|reward_score:40.57
+reward_step:3|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.69|reward_score:20.75
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.95
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.65|reward_score:19.58
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.54
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.89|reward_score:66.58
+reward_step:9|precision: 0.25| recall: 0.33 | f1: 0.29 | similarity: 0.93|reward_score:56.39
+reward_step:10|precision: 0.20| recall: 1.00 | f1: 0.33 | similarity: 0.87|reward_score:59.34
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.97
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.76|reward_score:22.94
+tensor([50.7229]) {'mean_p': 0.2076923076923077, 'mean_r': 0.3803418803418804, 'mean_f1': 0.2543251620174697, 'mean_similary': 0.8430123679530925, 'mean_reward': 50.722887240339745}
+==================action:4=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。‌公司是经济实体。公司名称通常包括有限责任公司或者股份有限公司。在新闻中可能也会使用股票名称指代公司。比如：小米公司，小米科技有限责任公司等。产品是指被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。。
+=======================================================
+reward_step:0|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.65|reward_score:59.36
+reward_step:1|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.81|reward_score:104.41
+reward_step:2|precision: 0.08| recall: 0.11 | f1: 0.10 | similarity: 0.87|reward_score:35.71
+reward_step:3|precision: 0.75| recall: 3.00 | f1: 1.20 | similarity: 0.94|reward_score:148.19
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.95
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:108.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.33| recall: 0.33 | f1: 0.33 | similarity: 0.88|reward_score:59.84
+reward_step:10|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.94
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.13|reward_score:3.90
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.63|reward_score:19.04
+tensor([62.6296]) {'mean_p': 0.3205128205128205, 'mean_r': 0.6495726495726496, 'mean_f1': 0.41245421245421243, 'mean_similary': 0.7128060238483624, 'mean_reward': 62.629601960872115}
+==================action:7=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。‌公司是经济实体。公司名称通常包括有限责任公司或者股份有限公司。在新闻中可能也会使用股票名称指代公司。比如：小米公司，小米科技有限责任公司等。产品是指被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.74|reward_score:88.76
+reward_step:1|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.82|reward_score:91.20
+reward_step:2|precision: 0.25| recall: 0.22 | f1: 0.24 | similarity: 0.93|reward_score:51.36
+reward_step:3|precision: 0.60| recall: 3.00 | f1: 1.00 | similarity: 0.92|reward_score:127.53
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.94|reward_score:94.96
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.91|reward_score:27.29
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 1.00| recall: 1.00 | f1: 1.00 | similarity: 0.93|reward_score:128.00
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:66.24
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.10
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.79|reward_score:23.83
+tensor([69.8297]) {'mean_p': 0.34102564102564104, 'mean_r': 0.7478632478632478, 'mean_f1': 0.4386123680241327, 'mean_similary': 0.8656144861456675, 'mean_reward': 69.82967138678329}
+==================action:3=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。‌公司是经济实体。公司名称通常包括有限责任公司或者股份有限公司。在新闻中可能也会使用股票名称指代公司。比如：小米公司，小米科技有限责任公司等。产品是指被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:88.51
+reward_step:1|precision: 0.50| recall: 0.50 | f1: 0.50 | similarity: 0.90|reward_score:77.09
+reward_step:2|precision: 0.40| recall: 0.44 | f1: 0.42 | similarity: 0.90|reward_score:69.12
+reward_step:3|precision: 0.50| recall: 3.00 | f1: 0.86 | similarity: 0.84|reward_score:111.06
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.95
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.91|reward_score:93.89
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.88|reward_score:26.55
+reward_step:7|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.00|reward_score:0.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.10|reward_score:3.09
+reward_step:10|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.89|reward_score:76.72
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.90
+reward_step:12|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.67|reward_score:86.89
+tensor([62.6801]) {'mean_p': 0.3128205128205128, 'mean_r': 0.7264957264957265, 'mean_f1': 0.41114324272219005, 'mean_similary': 0.7188588217664986, 'mean_reward': 62.68008892521396}
+==================action:3=============================
+
+
+从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请确定关系的方向，明确关系的主体和客体。‌公司是经济实体。公司名称通常包括有限责任公司或者股份有限公司。在新闻中可能也会使用股票名称指代公司。比如：小米公司，小米科技有限责任公司等。产品是指被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。。 请确定关系的方向，明确关系的主体和客体。
+=======================================================
+reward_step:0|precision: 0.25| recall: 0.50 | f1: 0.33 | similarity: 0.69|reward_score:54.01
+reward_step:1|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.76|reward_score:62.95
+reward_step:2|precision: 0.50| recall: 0.56 | f1: 0.53 | similarity: 0.94|reward_score:80.90
+reward_step:3|precision: 0.33| recall: 1.00 | f1: 0.50 | similarity: 0.76|reward_score:72.86
+reward_step:4|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.73|reward_score:88.70
+reward_step:5|precision: 0.50| recall: 1.00 | f1: 0.67 | similarity: 0.90|reward_score:93.76
+reward_step:6|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.87|reward_score:26.19
+reward_step:7|precision: 0.67| recall: 1.00 | f1: 0.80 | similarity: 0.93|reward_score:108.00
+reward_step:8|precision: 0.33| recall: 0.50 | f1: 0.40 | similarity: 0.77|reward_score:63.08
+reward_step:9|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.84|reward_score:25.32
+reward_step:10|precision: 0.25| recall: 1.00 | f1: 0.40 | similarity: 0.87|reward_score:66.10
+reward_step:11|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.83|reward_score:24.94
+reward_step:12|precision: 0.00| recall: 0.00 | f1: 0.00 | similarity: 0.43|reward_score:12.87
+tensor([59.9765]) {'mean_p': 0.28205128205128205, 'mean_r': 0.5427350427350427, 'mean_f1': 0.3609986504723347, 'mean_similary': 0.7958881972691952, 'mean_reward': 59.97651096530932}
+=======评估=========
+evluate_precision: 1.00| evluate_recall: 0.67 | evluate_f1: 0.80 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.14| evluate_recall: 0.50 | evluate_f1: 0.22 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.20| evluate_recall: 0.50 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.67| evluate_recall: 0.67 | evluate_f1: 0.67 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.28955026455026456
+✅ 发现更优模型！已保存到 2\models0\models2\models5\models-\models0\models4\models-\models0\models4\models_\models1\models4\models-\models0\models9\models-\models5\models2_5.pth
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.20| evluate_recall: 0.50 | evluate_f1: 0.29 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.67 | evluate_f1: 0.57 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.22976190476190475
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.17| evluate_recall: 0.50 | evluate_f1: 0.25 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.33 | evluate_f1: 0.40 |
+evluate_precision: 0.75| evluate_recall: 1.00 | evluate_f1: 0.86 |
+avg_f1:0.16726190476190475
+evluate_precision: 0.33| evluate_recall: 0.33 | evluate_f1: 0.33 |
+evluate_precision: 0.50| evluate_recall: 0.50 | evluate_f1: 0.50 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.12| evluate_recall: 0.50 | evluate_f1: 0.20 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.00| evluate_recall: 0.00 | evluate_f1: 0.00 |
+evluate_precision: 0.50| evluate_recall: 0.67 | evluate_f1: 0.57 |
+evluate_precision: 1.00| evluate_recall: 1.00 | evluate_f1: 1.00 |
+avg_f1:0.21706349206349207
+======评估结果=======
+Epoch 5: F1=0.2896
+Best p:0.2924603174603175
+Best r:0.3194444444444444
+Best Prompt: 从文本中提取涉及生产、供应、合作等关系，识别公司与其产品、服务或设备的生产商、供应商、合作伙伴等，并标注关系类型（如“生产”、“供应商”、“合作”等）。例如：（公司A，“生产”，产品B），（公司A，“供应商”，公司C）。 请以三元组形式输出：(实体1, 关系, 实体2)。
+Best action:[10]
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 162, in train_agent
+    val_f1_history.append(best_avg_f1)
+NameError: name 'val_f1_history' is not defined
+Traceback (most recent call last):
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\main.py", line 42, in <module>
+    train_agent(train_dataset, val_dataset, test_dataset,num_episodes,agent, reward,state_model,mode)
+  File "F:\Graduate\al\Opprompt\Opprompt(1)\stagetwo\Train.py", line 162, in train_agent
+    val_f1_history.append(best_avg_f1)
+NameError: name 'val_f1_history' is not defined

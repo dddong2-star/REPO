@@ -1,0 +1,18 @@
+{"time":"2025-04-04T16:39:02.348938+08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-04-04T16:39:02.348938+08:00","level":"INFO","msg":"created symlink","path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250404_163902-x195ihdr\\logs\\debug-core.log"}
+{"time":"2025-04-04T16:39:02.4610522+08:00","level":"INFO","msg":"created new stream","id":"x195ihdr"}
+{"time":"2025-04-04T16:39:02.4610522+08:00","level":"INFO","msg":"stream: started","id":"x195ihdr"}
+{"time":"2025-04-04T16:39:02.4610522+08:00","level":"INFO","msg":"handler: started","stream_id":"x195ihdr"}
+{"time":"2025-04-04T16:39:02.4610522+08:00","level":"INFO","msg":"sender: started","stream_id":"x195ihdr"}
+{"time":"2025-04-04T16:39:02.4610522+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"x195ihdr"}
+{"time":"2025-04-04T16:39:02.9363803+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-04T17:12:09.8834838+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/cuimeimei1999-northeastern-university/relation-extraction-prompt-optimization/x195ihdr/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-04-04T19:07:25.0191081+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/cuimeimei1999-northeastern-university/relation-extraction-prompt-optimization/x195ihdr/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2025-04-04T20:26:26.7738118+08:00","level":"INFO","msg":"stream: closing","id":"x195ihdr"}
+{"time":"2025-04-04T20:26:26.7743259+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-04T20:26:26.774841+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-04T20:26:28.6090941+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-04T20:26:28.9614609+08:00","level":"INFO","msg":"handler: closed","stream_id":"x195ihdr"}
+{"time":"2025-04-04T20:26:28.9614609+08:00","level":"INFO","msg":"sender: closed","stream_id":"x195ihdr"}
+{"time":"2025-04-04T20:26:28.9614609+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"x195ihdr"}
+{"time":"2025-04-04T20:26:28.9621049+08:00","level":"INFO","msg":"stream: closed","id":"x195ihdr"}

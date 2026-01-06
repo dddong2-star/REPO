@@ -1,0 +1,16 @@
+{"time":"2025-04-09T22:29:12.2785657+08:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-04-09T22:29:12.2785657+08:00","level":"INFO","msg":"created symlink","path":"F:\\Graduate\\al\\Opprompt\\Opprompt(1)\\stagetwo\\wandb\\run-20250409_222912-rv89crzc\\logs\\debug-core.log"}
+{"time":"2025-04-09T22:29:12.3989257+08:00","level":"INFO","msg":"created new stream","id":"rv89crzc"}
+{"time":"2025-04-09T22:29:12.3989257+08:00","level":"INFO","msg":"stream: started","id":"rv89crzc"}
+{"time":"2025-04-09T22:29:12.3989257+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"rv89crzc"}
+{"time":"2025-04-09T22:29:12.3989257+08:00","level":"INFO","msg":"sender: started","stream_id":"rv89crzc"}
+{"time":"2025-04-09T22:29:12.3989257+08:00","level":"INFO","msg":"handler: started","stream_id":"rv89crzc"}
+{"time":"2025-04-09T22:29:12.9482977+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-09T22:29:13.0687151+08:00","level":"INFO","msg":"stream: closing","id":"rv89crzc"}
+{"time":"2025-04-09T22:29:13.0687151+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-09T22:29:13.0697327+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-09T22:29:14.8352669+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-09T22:29:15.1943337+08:00","level":"INFO","msg":"handler: closed","stream_id":"rv89crzc"}
+{"time":"2025-04-09T22:29:15.1943337+08:00","level":"INFO","msg":"sender: closed","stream_id":"rv89crzc"}
+{"time":"2025-04-09T22:29:15.1943337+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"rv89crzc"}
+{"time":"2025-04-09T22:29:15.1943337+08:00","level":"INFO","msg":"stream: closed","id":"rv89crzc"}
