@@ -40,7 +40,7 @@ class ReCandidatePrompt:
             prompt = f"""
                     参考示例输入，经过大模型处理后得到示例输出。理解任务，根据任务生成一个关系抽取提示，使大模型下一次能完成这个任务。要求：
                     1. 仅返回提示
-                    2. 覆盖治疗、引发、检查、症状这四类关系。//原金融领域为：生产、供应、构成三类关系，这里是根据示例的输入输出生成种子提示这一过程的引导提示词
+                    2. 覆盖生产、供应商、构成三类关系。//原金融领域为：生产、供应、构成三类关系，这里是根据示例的输入输出生成种子提示这一过程的引导提示词
                     {examples}"""
             client = OpenAI(
                 # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
@@ -58,7 +58,7 @@ class ReCandidatePrompt:
             r = completion.choices[0].message.content
             print("===============第"+str(num)+"提示===================")
             print(r)
-            if "引发" in r or "治疗" in r or "检查" in r or "症状" in r :
+            if "生产" in r or "供应商" in r or "构成" in r:
                 res.append(r)
                 num+=1
         return res
@@ -209,10 +209,10 @@ class ReCandidatePrompt:
         tishi="""假设你是一名提示工程师，请你重写这个关系抽取任务的提示。
                  要求：
                     1. 仅返回提示
-                    2. 覆盖治疗、引发、检查、症状这四类关系    //生产、供应、构成三类关系
+                    2. 覆盖生产、供应、构成这三类关系    
                     3.字数在50词左右
                     """
-
+        #// 生产、供应、构成三类关系
         for p in prompts:
             i=0
             client = OpenAI(
