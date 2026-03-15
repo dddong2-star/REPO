@@ -40,12 +40,12 @@ class ReCandidatePrompt:
             prompt = f"""
                     参考示例输入，经过大模型处理后得到示例输出。理解任务，根据任务生成一个关系抽取提示，使大模型下一次能完成这个任务。要求：
                     1. 仅返回提示
-                    2. 覆盖生产、供应商、构成三类关系。//原金融领域为：生产、供应、构成三类关系，这里是根据示例的输入输出生成种子提示这一过程的引导提示词
+                    2. 覆盖病因、药物治疗、临床表现三类关系。
                     {examples}"""
             client = OpenAI(
                 # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
                 base_url="https://api.xty.app/v1",
-                api_key="sk-xxx",
+                api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
             )
             completion = client.chat.completions.create(
                 model='gpt-3.5-turbo',
@@ -58,7 +58,7 @@ class ReCandidatePrompt:
             r = completion.choices[0].message.content
             print("===============第"+str(num)+"提示===================")
             print(r)
-            if "生产" in r or "供应商" in r or "构成" in r:
+            if "病因" in r or "药物治疗" in r or "临床表现" in r:
                 res.append(r)
                 num+=1
         return res
@@ -81,7 +81,7 @@ class ReCandidatePrompt:
                         client = OpenAI(
                             # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
                             base_url="https://api.xty.app/v1",
-                            api_key="sk-xxx",
+                            api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
                         )
                         completion = client.chat.completions.create(
                             model='gpt-3.5-turbo',
@@ -209,7 +209,7 @@ class ReCandidatePrompt:
         tishi="""假设你是一名提示工程师，请你重写这个关系抽取任务的提示。
                  要求：
                     1. 仅返回提示
-                    2. 覆盖生产、供应、构成这三类关系    
+                    2. 覆盖病因、药物治疗、临床表现这三类关系    
                     3.字数在50词左右
                     """
         #// 生产、供应、构成三类关系
@@ -217,7 +217,7 @@ class ReCandidatePrompt:
             i=0
             client = OpenAI(
                 base_url="https://api.xty.app/v1",
-                api_key="sk-xxx",
+                api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
             )
             messages = [
                 {'role': 'system', 'content': '你是一个提示工程师，请按照要求书写提示'}]
@@ -249,7 +249,7 @@ class ReCandidatePrompt:
                                       k_percent=50,
                                       threshold=0.01):
         # Step 1: 生成初始提示集合
-        subset_size = max(5, int(0.1 * len(train_dataset)))
+        subset_size = min(10, int(0.1 * len(train_dataset)))
         print("=====sub_size："+str(subset_size)+"===============")
         Z_train = random.sample(list(train_dataset), subset_size)
         U = self.llm_generate(initial_nums,Z_train)
@@ -359,7 +359,7 @@ class ReCandidatePrompt:
 
 if __name__ == '__main__':
     base_path = "../data"
-    dataset = "triple"
+    dataset = "triple_CMeIE"
     initial_nums=10
     (train_dataset, val_dataset, test_dataset) = \
         make_relation_extract_dataset(base_path, dataset)
@@ -371,5 +371,5 @@ if __name__ == '__main__':
     def save_best_prompt(best_prompt, file_path):
         with open(file_path, 'w') as f:
             f.write(best_prompt)
-    file_path="F:\Program\Python\pythonProject\Opprompt\stageone\candidate_best_prompt.txt"
+    file_path="./candidate_best_prompt.txt"
     save_best_prompt(res,file_path)

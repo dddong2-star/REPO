@@ -45,7 +45,7 @@ def load_relation_extract_dataset(
         base_path: str,
 ) -> Tuple[List[str]]:
     # 三元组/五元组
-    assert dataset in ['triple', 'quintuple']
+    assert dataset in ['triple','triple_LCN', 'quintuple','triple_CMeIE','triple_LexEval','triple_FinCUGE']
     assert split in ['train', 'dev', 'test']
 
     filepath = f'{dataset}/{split}.tsv'
