@@ -82,9 +82,9 @@ def compute_q_loss(q_network, target_network, batch, i_episode, gamma=0.99):
     states, actions, rewards, next_states = batch
 
     # 确保数据是 PyTorch 张量
-    states = torch.stack(states)
+    states = torch.cat(states,dim=0)
     actions = torch.tensor(actions, dtype=torch.long)
-    next_states = torch.stack(next_states)
+    next_states = torch.cat(next_states,dim=0)
 
     # 计算当前 Q 值
     q_values = q_network(states).squeeze(1)
@@ -98,7 +98,7 @@ def compute_q_loss(q_network, target_network, batch, i_episode, gamma=0.99):
         # rewards = rewards.squeeze(1)
 
         target_q = rewards + gamma * next_q
-    wandb.log({"current_q": current_q.mean().item(), "target_q": target_q.mean().item(),"custom_epoch": i_episode})
+    #wandb.log({"current_q": current_q.mean().item(), "target_q": target_q.mean().item(),"custom_epoch": i_episode})
     # 计算损失
     loss = F.mse_loss(current_q.squeeze(), target_q)
     return loss

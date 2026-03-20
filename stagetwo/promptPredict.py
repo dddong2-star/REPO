@@ -72,7 +72,7 @@ def chatGPT_extract(formatted_template,num_samples=1):
             client = OpenAI(
                 # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
                 base_url="https://api.xty.app/v1",
-                api_key="sk-xxx",
+                api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
             )
             completion = client.chat.completions.create(
                 model='gpt-3.5-turbo',

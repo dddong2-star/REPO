@@ -50,6 +50,7 @@ def load_relation_extract_dataset(
 
     filepath = f'{dataset}/{split}.tsv'
     full_filepath = os.path.join(base_path, filepath)
+    print(f"正在尝试打开文件: {os.path.abspath(full_filepath)}")
     # print(os.getcwd())  # 打印当前工作目录
     df = pd.read_csv(full_filepath, sep='\t')
     source_texts = df.text.tolist()
