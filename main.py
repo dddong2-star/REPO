@@ -4,7 +4,7 @@ from stagetwo.Train import train_agent
 
 base_path = "../data"
 dataset = "triple"
-num_episodes=20#训练轮数
+num_episodes=100#训练轮数
 
 # 生成参数
 num_repeats =1

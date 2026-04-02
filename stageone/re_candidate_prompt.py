@@ -45,7 +45,7 @@ class ReCandidatePrompt:
             client = OpenAI(
                 # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
                 base_url="https://api.xty.app/v1",
-                api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
+                api_key="sk-xxx",
             )
             completion = client.chat.completions.create(
                 model='gpt-3.5-turbo',
@@ -81,7 +81,7 @@ class ReCandidatePrompt:
                         client = OpenAI(
                             # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
                             base_url="https://api.xty.app/v1",
-                            api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
+                            api_key="sk-xxx",
                         )
                         completion = client.chat.completions.create(
                             model='gpt-3.5-turbo',
@@ -217,7 +217,7 @@ class ReCandidatePrompt:
             i=0
             client = OpenAI(
                 base_url="https://api.xty.app/v1",
-                api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",
+                api_key="sk-xxx",
             )
             messages = [
                 {'role': 'system', 'content': '你是一个提示工程师，请按照要求书写提示'}]

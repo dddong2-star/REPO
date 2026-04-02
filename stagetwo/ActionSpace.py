@@ -6,7 +6,7 @@ import pandas as pd
 
 
 client = OpenAI(
-    api_key="sk-AgLrjpbbfCEFEi3wuP1Zn03FOy38TcIZbWWpZLvvRNmhbHVx",  # 替换为你的API Key
+    api_key="sk-xxx",  # 替换为你的API Key
     base_url="https://api.xty.app/v1"  # 如使用代理/本地化部署的LLM地址（可选）
 )
 
